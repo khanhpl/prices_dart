@@ -20,10 +20,13 @@ class HomePage extends StatelessWidget{
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      SizedBox(width:10.0),
+                      Spacer(),
                       Text('Chào,Jack Dawson',textAlign:TextAlign.center,),
                       Spacer(),
                       CircleAvatar(
-                        child: Image.asset('assets/home_page/jack.jpg'),
+                        backgroundImage:AssetImage('assets/home_page/jack.jpg'),
+                        radius: 30.0,
                       )
                     ],
                   ),
@@ -165,6 +168,24 @@ class HomePage extends StatelessWidget{
                 Option(icon: Icons.settings,optionTitle: 'Cài đặt chung'),
                 Option(icon: Icons.comment,optionTitle: 'Góp ý cho Prices'),
                 Option(icon: Icons.money,optionTitle: 'Chính sách hoàn tiền'),
+
+                SizedBox(height:40.0),
+
+                Container(
+                  height: size.height * 0.15,
+                  margin: EdgeInsets.fromLTRB(10.0,0.0 ,10.0,5.0),
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.green[900],
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Row(
+                    children: <Widget>[
+
+                    ],
+                  ),
+
+                ),
 
 
               ],
