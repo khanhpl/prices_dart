@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:prices_dart/screens/homepage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: <String, WidgetBuilder>{
+      '/': (context) => HomePage(),
+
+    },
+  ));
 }
 
 class MyApp extends StatelessWidget {
