@@ -1,7 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:prices_dart/screens/accountpage.dart';
-import 'package:prices_dart/screens/homepage.dart';
+import 'package:prices_dart/screens/account/accountpage.dart';
+import 'package:prices_dart/screens/home/homepage.dart';
 
 
 class MyMainPage extends StatefulWidget{

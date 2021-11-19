@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:prices_dart/my_main_page.dart';
-import 'package:prices_dart/screens/accountpage.dart';
+import 'package:prices_dart/screens/account/accountpage.dart';
+import 'package:prices_dart/screens/welcome/login_screen.dart';
+import 'package:prices_dart/screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: <String, WidgetBuilder>{
-      '/': (context) => MyMainPage(),
-
+      '/': (context) => WelcomeScreen(),
+      '/loginScreen': (context) => LoginScreen(),
+      '/mainPage' : (context) => MyMainPage(),
     },
-  ));
+  ),
+  );
 }
 
