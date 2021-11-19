@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:prices_dart/constants.dart' as constants;
+import 'package:prices_dart/constants.dart' as Constants;
 
 class AccountPage extends StatelessWidget{
 
@@ -9,7 +9,7 @@ class AccountPage extends StatelessWidget{
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var _rateColor = Color.fromRGBO(91, 150, 16,1.0);
-    var _primaryColor = Color.fromRGBO(239,239,239,1.0);
+    var _primaryColor = Constants.primaryColor;
     var _itemColor = Color.fromRGBO(243,250,255,1.0);
     return Scaffold(
         body: Container(
