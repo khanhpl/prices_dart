@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prices_dart/services/home_page/shops/shop.dart';
-import 'package:prices_dart/services/home_page/shops/show_shop.dart';
-import 'package:prices_dart/services/home_page/shops/show_shop_row.dart';
-
-class AllShops extends StatelessWidget{
-  List<Shop> favoriteList;
-  List<Shop> allShopList;
-  AllShops({required this.favoriteList,required this.allShopList});
+import 'package:prices_dart/services/home_page/product_types/product_type.dart';
+import 'package:prices_dart/services/home_page/product_types/show_product_type.dart';
+class AllProductType extends StatelessWidget{
+  List<ProductType> favoriteList;
+  List<ProductType> allProductTypeList;
+  AllProductType({required this.favoriteList,required this.allProductTypeList});
 
 
   @override
@@ -21,7 +19,7 @@ class AllShops extends StatelessWidget{
 
         ),
         backgroundColor: Colors.white,
-        title: Text('Tất cả cửa hàng',style:TextStyle(color: Colors.black)),
+        title: Text('Tất cả ngành hàng',style:TextStyle(color: Colors.black)),
         centerTitle: true,
       ),
       body: Container(
@@ -31,7 +29,7 @@ class AllShops extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Cửa hàng bạn quan tâm',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
+              Text('Ngành hàng bạn quan tâm',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
               Container(
                 margin: EdgeInsets.all(5.0),
                 height: size.height * 0.15,
@@ -42,26 +40,26 @@ class AllShops extends StatelessWidget{
                     return SizedBox();
                   },
                   itemBuilder: (BuildContext context, int index) {
-                    return ShowShop(item: favoriteList[index],);
+                    return ShowProductType(item: favoriteList[index],);
                   },
                 ),
               ),
-              Text('Cửa hàng khác',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
+              Text('Ngành hàng khác',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
 
               Container(
                 margin: EdgeInsets.all(5.0),
                 height: double.infinity,
                 width: double.infinity,
                 child: ListView.separated(
-                  physics:NeverScrollableScrollPhysics(),
                   shrinkWrap:true,
+                  physics:NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  itemCount: favoriteList.length,
+                  itemCount: allProductTypeList.length,
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox();
                   },
                   itemBuilder: (BuildContext context, int index) {
-                    return ShowShopInRow(item:favoriteList[index],item1:allShopList[index],);
+                    return ShowProductType1(item:allProductTypeList[index],);
                   },
                 ),
               ),

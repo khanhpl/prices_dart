@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:prices_dart/screens/all_product_type.dart';
 import 'package:prices_dart/screens/all_shops.dart';
 import 'package:prices_dart/services/home_page/product_types/product_type.dart';
 import 'package:prices_dart/services/home_page/product_types/show_product_type_column.dart';
@@ -22,6 +23,18 @@ class HomePage extends StatelessWidget{
     Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
   ];
 
+  List<Shop> _allShopList=[
+    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+  ];
+
   List <ProductType> _typeList=[
     ProductType(image:'assets/home_page/product_type1.PNG',name:'Điện thoại - Máy tính bảng',percent: 'xx'),
     ProductType(image:'assets/home_page/product_type3.PNG',name:'Laptop',percent: 'xx'),
@@ -29,7 +42,18 @@ class HomePage extends StatelessWidget{
 
   List <ProductType> _typeList1=[
     ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
-    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang',percent: 'xx'),
+    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang - Phụ kiện',percent: 'xx'),
+  ];
+
+  List <ProductType> _allTypeList=[
+    ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
+    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang- Phụ kiện',percent: 'xx'),
+    ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
+    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang - Phụ kiện',percent: 'xx'),
+    ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
+    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang- Phụ kiện',percent: 'xx'),
+    ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
+    ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang - Phụ kiện',percent: 'xx'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,7 +64,12 @@ class HomePage extends StatelessWidget{
         backgroundColor: Colors.white,
         leading: Container(
           height: size.height * 0.05,
-          child: Image.asset('assets/home_page/prices_brand.PNG'),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/home_page/prices_brand.PNG'),
+              fit: BoxFit.fill,
+            ),
+          ),
         ),
         title: Container(
           width: size.width * 0.9,
@@ -216,7 +245,7 @@ class HomePage extends StatelessWidget{
                     Spacer(),
                     GestureDetector(
                       onTap: (){
-
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>AllProductType(favoriteList:_typeList,allProductTypeList:_allTypeList,)));
                       },
                       child: Text(
                         'Xem tất cả',
@@ -228,7 +257,7 @@ class HomePage extends StatelessWidget{
                     ),
                     GestureDetector(
                       onTap: (){
-
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>AllProductType(favoriteList:_typeList,allProductTypeList:_allTypeList,)));
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
