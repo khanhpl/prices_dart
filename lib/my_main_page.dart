@@ -2,6 +2,8 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:prices_dart/screens/account/accountpage.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
+import 'package:prices_dart/screens/settings/settings_page.dart';
+
 
 
 class MyMainPage extends StatefulWidget{
@@ -22,7 +24,7 @@ class _MyMainPageState extends State<MyMainPage> {
       case 2:
         return AccountPage();
       case 3:
-        return Text('Cai dat');
+        return SettingsPage();
       default:
         return HomePage();
     }

@@ -178,8 +178,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ),
                                         ),
                                       ],
+
                                     ),
                                 ),
+
                                 SizedBox(height: _pageHeight * 0.025),
                                 Container(
                                   width: _pageWidth * 0.7,
@@ -222,9 +224,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
+
                                     onPressed: () {
                                         Navigator.pushNamed(context, '/forgotPassword');
                                     },
+
                                   ),
                                 ),
                                 SizedBox(height: _pageHeight * 0.07),
@@ -415,9 +419,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
+
                                     onPressed: () {
                                       Navigator.pushNamed(context, '/registerSuccess');
                                     },
+
                                   ),
                                 ),
                                 SizedBox(height: _pageHeight * 0.07),
