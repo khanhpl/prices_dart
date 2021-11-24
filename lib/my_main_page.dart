@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:prices_dart/screens/account/accountpage.dart';
 import 'package:prices_dart/screens/general_setting/general_setting.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
+import 'package:prices_dart/screens/settings/settings_page.dart';
+
 
 class MyMainPage extends StatefulWidget {
   @override
@@ -21,7 +23,9 @@ class _MyMainPageState extends State<MyMainPage> {
       case 2:
         return AccountPage();
       case 3:
-        return GeneralSettingPage();
+
+        return SettingsPage();
+
       default:
         return HomePage();
     }
