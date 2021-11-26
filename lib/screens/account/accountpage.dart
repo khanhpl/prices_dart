@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
@@ -9,18 +10,21 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery
+        .of(context)
+        .size;
     var _rateColor = Color.fromRGBO(91, 150, 16, 1.0);
     var _primaryColor = Constants.primaryColor;
     var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
+
     List<CustomColor> _colorList = [
-      CustomColor(customColor: Color.fromRGBO(244,250,250,1)),
-      CustomColor(customColor: Color.fromRGBO(245,249,249,1)),
-      CustomColor(customColor: Color.fromRGBO(247,249,249,1)),
-      CustomColor(customColor: Color.fromRGBO(248,248,248,1)),
-      CustomColor(customColor: Color.fromRGBO(250,248,248,1)),
-      CustomColor(customColor: Color.fromRGBO(252,247,247,1)),
-      CustomColor(customColor: Color.fromRGBO(254,246,246,1)),
+      CustomColor(customColor: Color.fromRGBO(244, 250, 250, 1)),
+      CustomColor(customColor: Color.fromRGBO(245, 249, 249, 1)),
+      CustomColor(customColor: Color.fromRGBO(247, 249, 249, 1)),
+      CustomColor(customColor: Color.fromRGBO(248, 248, 248, 1)),
+      CustomColor(customColor: Color.fromRGBO(250, 248, 248, 1)),
+      CustomColor(customColor: Color.fromRGBO(252, 247, 247, 1)),
+      CustomColor(customColor: Color.fromRGBO(254, 246, 246, 1)),
     ];
     return Scaffold(
       body: Container(
@@ -32,40 +36,63 @@ class AccountPage extends StatelessWidget {
             children: <Widget>[
               Container(
                 color: _primaryColor,
+
                 height: size.height * 0.15,
                 width: double.infinity,
+                alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(width: 10.0),
+                    SizedBox(width: size.width * 0.03),
+                    Container(
+                      child: IconButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                          icon: ImageIcon(
+                            AssetImage('assets/account_page/cancel.png'),
+                            size: size.height*0.05,
+                            color: Color(0xFFBDBDBD),
+                          ),
+                      )
+                    ),
                     Spacer(),
                     Text(
                       'Chào,Jack Dawson',
                       textAlign: TextAlign.center,
                     ),
                     Spacer(),
-                    CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/account_page/jack.jpg'),
-                      radius: 30.0,
-                    )
+                    Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage('assets/account_page/jack.jpg'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      width: size.height*0.07,
+                      height: size.height*0.07,
+                    ),
+                    SizedBox(width: size.width * 0.03),
                   ],
                 ),
               ),
               Container(
+                padding: EdgeInsets.only(left: size.width*0.03),
                 child: Text(
                   'Tài khoản',
                   style: TextStyle(
                     fontSize: 20.0,
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   // color: _itemColor,
                   gradient: LinearGradient(
@@ -77,44 +104,54 @@ class AccountPage extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('số dư trong ví',
-                              style: TextStyle(
-                                color: Colors.black26,
-                              )),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '365.150đ',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.bold),
+                child: FlatButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/processingScreen');
+                  },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Số dư trong ví',
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(height: 5.0),
+                              Text(
+                                '365.150đ',
+                                style: TextStyle(
+                                    color: Color(0xFFFE3300),
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Spacer(),
+                        CircleAvatar(
+                          radius: 15.0,
+                          backgroundColor: Colors.white,
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.black,
+                            size: 15.0,
+                          ),
+                        ),
+                      ],
                     ),
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 15.0,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black,
-                        size: 15.0,
-                      ),
-                    ),
-                  ],
-                ),
+                )
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -126,22 +163,27 @@ class AccountPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('đang xử lý',
+                          Text('Đang xử lý',
                               style: TextStyle(
-                                color: Colors.black26,
-                              )),
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
+                              ),
+                          ),
                           SizedBox(height: 5.0),
                           Text(
                             '65.150đ',
                             style: TextStyle(
-                                color: Colors.red,
+                                color: Color(0xFFFE3300),
                                 fontSize: 22.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
@@ -161,8 +203,8 @@ class AccountPage extends StatelessWidget {
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -174,21 +216,27 @@ class AccountPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('lịch sử đơn hàng ',
+                          Text('Lịch sử đơn hàng ',
                               style: TextStyle(
-                                color: Colors.black26,
-                              )),
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
+                              ),
+                          ),
                           SizedBox(height: 5.0),
                           Text(
                             '75 đơn hàng thành công',
                             style: TextStyle(
-                              color: Colors.green,
+                              color: Color(0xFF689733),
                               fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
@@ -209,8 +257,8 @@ class AccountPage extends StatelessWidget {
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -222,21 +270,26 @@ class AccountPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('lịch sử rút tiền ',
+                          Text('Lịch sử rút tiền ',
                               style: TextStyle(
-                                color: Colors.black26,
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
                               )),
                           SizedBox(height: 5.0),
                           Text(
                             '05 giao dịch thành công',
                             style: TextStyle(
-                              color: Colors.green,
+                              color: Color(0xFF689733),
                               fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
@@ -282,7 +335,7 @@ class AccountPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image:
-                              AssetImage('assets/account_page/price_logo.PNG'),
+                          AssetImage('assets/account_page/price_logo.PNG'),
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -307,11 +360,12 @@ class AccountPage extends StatelessWidget {
                           allowHalfRating: true,
                           itemCount: 5,
                           itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                          itemBuilder: (context, _) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                            // size: 10.0,
-                          ),
+                          itemBuilder: (context, _) =>
+                              Icon(
+                                Icons.star,
+                                color: Color(0xFFBDBDBD),
+                                // size: 10.0,
+                              ),
                           onRatingUpdate: (rating) {},
                         )
                       ],
@@ -328,7 +382,7 @@ class AccountPage extends StatelessWidget {
                         child: Text(
                           'Đánh giá ngay',
                           style:
-                              TextStyle(color: Colors.black26, fontSize: 10.0),
+                          TextStyle(color: Colors.black45, fontSize: 10.0),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -354,21 +408,23 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CustomColor> _colorList = [
-      CustomColor(customColor: Color.fromRGBO(244,250,250,1)),
-      CustomColor(customColor: Color.fromRGBO(245,249,249,1)),
-      CustomColor(customColor: Color.fromRGBO(247,249,249,1)),
-      CustomColor(customColor: Color.fromRGBO(248,248,248,1)),
-      CustomColor(customColor: Color.fromRGBO(250,248,248,1)),
-      CustomColor(customColor: Color.fromRGBO(252,247,247,1)),
-      CustomColor(customColor: Color.fromRGBO(254,246,246,1)),
+      CustomColor(customColor: Color.fromRGBO(244, 250, 250, 1)),
+      CustomColor(customColor: Color.fromRGBO(245, 249, 249, 1)),
+      CustomColor(customColor: Color.fromRGBO(247, 249, 249, 1)),
+      CustomColor(customColor: Color.fromRGBO(248, 248, 248, 1)),
+      CustomColor(customColor: Color.fromRGBO(250, 248, 248, 1)),
+      CustomColor(customColor: Color.fromRGBO(252, 247, 247, 1)),
+      CustomColor(customColor: Color.fromRGBO(254, 246, 246, 1)),
     ];
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery
+        .of(context)
+        .size;
     var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
     var _iconColor = Color.fromRGBO(102, 102, 102, 1.0);
     return Container(
       height: size.height * 0.08,
-      margin: EdgeInsets.fromLTRB(10.0, 1.0, 10.0, 1.0),
-      padding: EdgeInsets.all(10.0),
+      margin: EdgeInsets.fromLTRB(size.width * 0.03, 1.0, size.width * 0.03, 1.0),
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -388,7 +444,10 @@ class Option extends StatelessWidget {
           SizedBox(width: 5.0),
           Text(
             optionTitle,
-            style: TextStyle(color: _iconColor),
+            style: TextStyle(
+                color: _iconColor,
+                fontWeight: FontWeight.w500,
+            ),
           ),
         ],
       ),

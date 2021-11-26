@@ -1,7 +1,6 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:prices_dart/screens/account/accountpage.dart';
-import 'package:prices_dart/screens/general_setting/general_setting.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
 import 'package:prices_dart/screens/settings/settings_page.dart';
 
