@@ -47,7 +47,7 @@ class AccountPage extends StatelessWidget {
                       },
                       icon: ImageIcon(
                         AssetImage('assets/account_page/cancel.png'),
-                        size: size.height * 0.05,
+                        size: size.height * 0.04,
                         color: Color(0xFFBDBDBD),
                       ),
                     )),
@@ -84,71 +84,12 @@ class AccountPage extends StatelessWidget {
                 ),
               ),
               Container(
-                  height: size.height * 0.1,
-                  margin: EdgeInsets.fromLTRB(
-                      size.width * 0.03, 5.0, size.width * 0.03, 5.0),
-                  // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  decoration: BoxDecoration(
-                    // color: _itemColor,
-                    gradient: LinearGradient(
-                      colors: [
-                        for (var color in _colorList) color.customColor,
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/processingScreen');
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                'Số dư trong ví',
-                                style: TextStyle(
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                '365.150đ',
-                                style: TextStyle(
-                                    color: Color(0xFFFE3300),
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Spacer(),
-                        CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.black,
-                            size: 15.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
-              Container(
                 height: size.height * 0.1,
                 margin: EdgeInsets.fromLTRB(
                     size.width * 0.03, 5.0, size.width * 0.03, 5.0),
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
+                  // color: _itemColor,
                   gradient: LinearGradient(
                     colors: [
                       for (var color in _colorList) color.customColor,
@@ -158,167 +99,235 @@ class AccountPage extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'Đang xử lý',
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '65.150đ',
-                            style: TextStyle(
-                                color: Color(0xFFFE3300),
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 15.0,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black,
-                        size: 15.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      for (var color in _colorList) color.customColor,
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'Lịch sử đơn hàng ',
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '75 đơn hàng thành công',
-                            style: TextStyle(
-                              color: Color(0xFF689733),
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 15.0,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black,
-                        size: 15.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      for (var color in _colorList) color.customColor,
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text('Lịch sử rút tiền ',
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/balancePage');
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Số dư trong ví',
                               style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.w500,
-                              )),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '05 giao dịch thành công',
-                            style: TextStyle(
-                              color: Color(0xFF689733),
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                        ],
+                            SizedBox(height: 5.0),
+                            Text(
+                              '365.150đ',
+                              style: TextStyle(
+                                  color: Color(0xFFFE3300),
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 15.0,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black,
-                        size: 15.0,
+                      Spacer(),
+                      CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                          size: 15.0,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                height: size.height * 0.1,
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      for (var color in _colorList) color.customColor,
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Đang xử lý',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 5.0),
+                            Text(
+                              '65.150đ',
+                              style: TextStyle(
+                                  color: Color(0xFFFE3300),
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                          size: 15.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                height: size.height * 0.1,
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      for (var color in _colorList) color.customColor,
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Lịch sử đơn hàng ',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 5.0),
+                            Text(
+                              '75 đơn hàng thành công',
+                              style: TextStyle(
+                                color: Color(0xFF689733),
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                          size: 15.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                height: size.height * 0.1,
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      for (var color in _colorList) color.customColor,
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Lịch sử rút tiền ',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 5.0),
+                            Text(
+                              '05 giao dịch thành công',
+                              style: TextStyle(
+                                color: Color(0xFF689733),
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                          size: 15.0,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 40.0),
               Option(
                   icon: Icons.account_box_rounded,
                   optionTitle: 'Cài đặt tài khoản',
-                  link: '/'),
+                  link: '/personalSettingPage'),
               Option(
                   icon: Icons.favorite, optionTitle: 'Đã yêu thích', link: '/'),
               Option(
                   icon: Icons.settings,
                   optionTitle: 'Cài đặt chung',
-                  link: '/'),
+                  link: '/generalSettingPage'),
               Option(
                   icon: Icons.comment,
                   optionTitle: 'Góp ý cho Prices',
@@ -445,7 +454,7 @@ class Option extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: FlatButton(
-        onPressed: (){
+        onPressed: () {
           Navigator.pushNamed(context, link);
         },
         child: Row(

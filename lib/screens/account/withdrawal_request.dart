@@ -29,6 +29,9 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
       child: Container(
         width: size.width,
         color: _primaryColor,
+
+        padding: EdgeInsets.fromLTRB(
+            size.width * 0.03, 0, size.width * 0.03, 0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -37,7 +40,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
             children: [
               Container(
                 width: size.width,
-                height: size.height * 0.1,
+                height: size.height * 0.15,
                 alignment: Alignment.centerLeft,
                 child: Container(
                   child: IconButton(
@@ -46,7 +49,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                     },
                     icon: ImageIcon(
                       AssetImage('assets/account_page/cancel.png'),
-                      size: size.height * 0.05,
+                      size: size.height * 0.04,
                       color: Color(0xFFBDBDBD),
                     ),
                   ),

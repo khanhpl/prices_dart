@@ -39,7 +39,7 @@ class WithdrawalRequestProcessState
             children: [
               Container(
                 width: size.width,
-                height: size.height * 0.1,
+                height: size.height * 0.15,
                 alignment: Alignment.centerLeft,
                 child: Container(
                   child: IconButton(
@@ -48,7 +48,7 @@ class WithdrawalRequestProcessState
                     },
                     icon: ImageIcon(
                       AssetImage('assets/account_page/cancel.png'),
-                      size: size.height * 0.05,
+                      size: size.height * 0.04,
                       color: Color(0xFFBDBDBD),
                     ),
                   ),
