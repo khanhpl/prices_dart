@@ -6,13 +6,9 @@ import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
 
 class AccountPage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery
-        .of(context)
-        .size;
+    var size = MediaQuery.of(context).size;
     var _rateColor = Color.fromRGBO(91, 150, 16, 1.0);
     var _primaryColor = Constants.primaryColor;
     var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
@@ -36,7 +32,6 @@ class AccountPage extends StatelessWidget {
             children: <Widget>[
               Container(
                 color: _primaryColor,
-
                 height: size.height * 0.15,
                 width: double.infinity,
                 alignment: Alignment.center,
@@ -46,17 +41,16 @@ class AccountPage extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(width: size.width * 0.03),
                     Container(
-                      child: IconButton(
-                        onPressed: (){
-                          Navigator.pop(context);
-                        },
-                          icon: ImageIcon(
-                            AssetImage('assets/account_page/cancel.png'),
-                            size: size.height*0.05,
-                            color: Color(0xFFBDBDBD),
-                          ),
-                      )
-                    ),
+                        child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: ImageIcon(
+                        AssetImage('assets/account_page/cancel.png'),
+                        size: size.height * 0.05,
+                        color: Color(0xFFBDBDBD),
+                      ),
+                    )),
                     Spacer(),
                     Text(
                       'Chào,Jack Dawson',
@@ -64,22 +58,22 @@ class AccountPage extends StatelessWidget {
                     ),
                     Spacer(),
                     Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: AssetImage('assets/account_page/jack.jpg'),
-                            fit: BoxFit.fill,
-                          ),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage('assets/account_page/jack.jpg'),
+                          fit: BoxFit.fill,
                         ),
-                      width: size.height*0.07,
-                      height: size.height*0.07,
+                      ),
+                      width: size.height * 0.07,
+                      height: size.height * 0.07,
                     ),
                     SizedBox(width: size.width * 0.03),
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(left: size.width*0.03),
+                padding: EdgeInsets.only(left: size.width * 0.03),
                 child: Text(
                   'Tài khoản',
                   style: TextStyle(
@@ -90,24 +84,25 @@ class AccountPage extends StatelessWidget {
                 ),
               ),
               Container(
-                height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
-                // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                decoration: BoxDecoration(
-                  // color: _itemColor,
-                  gradient: LinearGradient(
-                    colors: [
-                      for(var color in _colorList) color.customColor,
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+                  height: size.height * 0.1,
+                  margin: EdgeInsets.fromLTRB(
+                      size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                  // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  decoration: BoxDecoration(
+                    // color: _itemColor,
+                    gradient: LinearGradient(
+                      colors: [
+                        for (var color in _colorList) color.customColor,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: FlatButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/processingScreen');
-                  },
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/processingScreen');
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -117,7 +112,8 @@ class AccountPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text('Số dư trong ví',
+                              Text(
+                                'Số dư trong ví',
                                 style: TextStyle(
                                   color: Colors.black87,
                                   fontWeight: FontWeight.w500,
@@ -146,16 +142,16 @@ class AccountPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                )
-              ),
+                  )),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      for(var color in _colorList) color.customColor,
+                      for (var color in _colorList) color.customColor,
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -171,11 +167,12 @@ class AccountPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('Đang xử lý',
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          Text(
+                            'Đang xử lý',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           SizedBox(height: 5.0),
                           Text(
@@ -203,12 +200,13 @@ class AccountPage extends StatelessWidget {
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      for(var color in _colorList) color.customColor,
+                      for (var color in _colorList) color.customColor,
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -224,11 +222,12 @@ class AccountPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('Lịch sử đơn hàng ',
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          Text(
+                            'Lịch sử đơn hàng ',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           SizedBox(height: 5.0),
                           Text(
@@ -257,12 +256,13 @@ class AccountPage extends StatelessWidget {
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(size.width * 0.03, 5.0, size.width * 0.03, 5.0),
+                margin: EdgeInsets.fromLTRB(
+                    size.width * 0.03, 5.0, size.width * 0.03, 5.0),
                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      for(var color in _colorList) color.customColor,
+                      for (var color in _colorList) color.customColor,
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -311,11 +311,22 @@ class AccountPage extends StatelessWidget {
               SizedBox(height: 40.0),
               Option(
                   icon: Icons.account_box_rounded,
-                  optionTitle: 'Cài đặt tài khoản'),
-              Option(icon: Icons.favorite, optionTitle: 'Đã yêu thích'),
-              Option(icon: Icons.settings, optionTitle: 'Cài đặt chung'),
-              Option(icon: Icons.comment, optionTitle: 'Góp ý cho Prices'),
-              Option(icon: Icons.money, optionTitle: 'Chính sách hoàn tiền'),
+                  optionTitle: 'Cài đặt tài khoản',
+                  link: '/'),
+              Option(
+                  icon: Icons.favorite, optionTitle: 'Đã yêu thích', link: '/'),
+              Option(
+                  icon: Icons.settings,
+                  optionTitle: 'Cài đặt chung',
+                  link: '/'),
+              Option(
+                  icon: Icons.comment,
+                  optionTitle: 'Góp ý cho Prices',
+                  link: '/'),
+              Option(
+                  icon: Icons.money,
+                  optionTitle: 'Chính sách hoàn tiền',
+                  link: '/'),
               SizedBox(height: 40.0),
               Container(
                 height: size.height * 0.15,
@@ -335,7 +346,7 @@ class AccountPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image:
-                          AssetImage('assets/account_page/price_logo.PNG'),
+                              AssetImage('assets/account_page/price_logo.PNG'),
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -360,12 +371,11 @@ class AccountPage extends StatelessWidget {
                           allowHalfRating: true,
                           itemCount: 5,
                           itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                          itemBuilder: (context, _) =>
-                              Icon(
-                                Icons.star,
-                                color: Color(0xFFBDBDBD),
-                                // size: 10.0,
-                              ),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Color(0xFFBDBDBD),
+                            // size: 10.0,
+                          ),
                           onRatingUpdate: (rating) {},
                         )
                       ],
@@ -382,7 +392,7 @@ class AccountPage extends StatelessWidget {
                         child: Text(
                           'Đánh giá ngay',
                           style:
-                          TextStyle(color: Colors.black45, fontSize: 10.0),
+                              TextStyle(color: Colors.black45, fontSize: 10.0),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -402,8 +412,9 @@ class AccountPage extends StatelessWidget {
 class Option extends StatelessWidget {
   IconData icon;
   String optionTitle;
+  String link;
 
-  Option({required this.icon, required this.optionTitle});
+  Option({required this.icon, required this.optionTitle, required this.link});
 
   @override
   Widget build(BuildContext context) {
@@ -416,40 +427,43 @@ class Option extends StatelessWidget {
       CustomColor(customColor: Color.fromRGBO(252, 247, 247, 1)),
       CustomColor(customColor: Color.fromRGBO(254, 246, 246, 1)),
     ];
-    var size = MediaQuery
-        .of(context)
-        .size;
+    var size = MediaQuery.of(context).size;
     var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
     var _iconColor = Color.fromRGBO(102, 102, 102, 1.0);
     return Container(
       height: size.height * 0.08,
-      margin: EdgeInsets.fromLTRB(size.width * 0.03, 1.0, size.width * 0.03, 1.0),
-      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      margin:
+          EdgeInsets.fromLTRB(size.width * 0.03, 1.0, size.width * 0.03, 1.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            for(var color in _colorList) color.customColor,
+            for (var color in _colorList) color.customColor,
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: Row(
-        children: <Widget>[
-          Icon(
-            icon,
-            color: _iconColor,
-          ),
-          SizedBox(width: 5.0),
-          Text(
-            optionTitle,
-            style: TextStyle(
+      child: FlatButton(
+        onPressed: (){
+          Navigator.pushNamed(context, link);
+        },
+        child: Row(
+          children: <Widget>[
+            Icon(
+              icon,
+              color: _iconColor,
+            ),
+            SizedBox(width: 5.0),
+            Text(
+              optionTitle,
+              style: TextStyle(
                 color: _iconColor,
                 fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
