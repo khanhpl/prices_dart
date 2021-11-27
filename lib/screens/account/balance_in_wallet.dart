@@ -6,15 +6,15 @@ import 'package:flutter/widgets.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
 
-class ProcessingPage extends StatefulWidget {
+class BalancePage extends StatefulWidget {
   @override
-  State<ProcessingPage> createState() {
+  State<BalancePage> createState() {
     // TODO: implement createState
-    return _ProcessingPageState();
+    return _BalancePageState();
   }
 }
 
-class _ProcessingPageState extends State<ProcessingPage> {
+class _BalancePageState extends State<BalancePage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -40,7 +40,7 @@ class _ProcessingPageState extends State<ProcessingPage> {
           children: [
             Container(
               width: size.width,
-              height: size.height * 0.1,
+              height: size.height * 0.15,
               alignment: Alignment.centerLeft,
               child: Container(
                 child: IconButton(
@@ -49,7 +49,7 @@ class _ProcessingPageState extends State<ProcessingPage> {
                   },
                   icon: ImageIcon(
                     AssetImage('assets/account_page/cancel.png'),
-                    size: size.height * 0.05,
+                    size: size.height * 0.04,
                     color: Color(0xFFBDBDBD),
                   ),
                 ),

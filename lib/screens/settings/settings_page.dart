@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import '../../colors.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -31,10 +30,28 @@ class _SettingsPageState extends State<SettingsPage> {
       backgroundColor: _primaryColor,
       body: Container(
         color: _primaryColor,
-        margin: EdgeInsets.fromLTRB(size.width*0.02, size.height * 0.1, size.width*0.02, 10.0),
+        margin: EdgeInsets.fromLTRB(
+            size.width * 0.02, 0, size.width * 0.02, 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Container(
+              width: size.width,
+              height: size.height * 0.15,
+              alignment: Alignment.centerLeft,
+              child: Container(
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: ImageIcon(
+                    AssetImage('assets/account_page/cancel.png'),
+                    size: size.height * 0.04,
+                    color: Color(0xFFBDBDBD),
+                  ),
+                ),
+              ),
+            ),
             Text('Cài đặt chung',
                 style: TextStyle(
                     color: Colors.black,
@@ -42,7 +59,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     fontWeight: FontWeight.bold)),
             SizedBox(height: 10.0),
             Container(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
               height: size.height * 0.08,
               margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
               decoration: BoxDecoration(
@@ -89,7 +106,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   end: Alignment.centerRight,
                 ),
               ),
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
               height: size.height * 0.08,
               margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
               child: Row(
@@ -124,7 +141,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   end: Alignment.centerRight,
                 ),
               ),
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               height: size.height * 0.08,
               margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
               child: Row(
@@ -193,7 +210,6 @@ class _SettingsPageState extends State<SettingsPage> {
             Container(
               height: size.height * 0.08,
               margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
-              padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -206,25 +222,30 @@ class _SettingsPageState extends State<SettingsPage> {
                     bottomLeft: Radius.circular(10.0),
                     bottomRight: Radius.circular(10.0)),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Thông tin ứng dụng',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  Spacer(),
-                  CircleAvatar(
-                    radius: 15.0,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.black,
-                      size: 15.0,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/appInfor');
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Thông tin ứng dụng',
+                      style: TextStyle(color: Colors.black),
                     ),
-                  ),
-                ],
+                    Spacer(),
+                    CircleAvatar(
+                      radius: 15.0,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.black,
+                        size: 15.0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 10.0),
@@ -235,7 +256,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    width: size.width*0.4,
+                    width: size.width * 0.4,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
@@ -249,7 +270,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                   ),
                   Container(
-                    width: size.width*0.3,
+                    width: size.width * 0.3,
                     decoration: BoxDecoration(
                       color: Color(0xff333333),
                       borderRadius: BorderRadius.circular(20.0),
@@ -259,7 +280,9 @@ class _SettingsPageState extends State<SettingsPage> {
                         'Trang chủ',
                         style: TextStyle(color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/mainPage');
+                      },
                     ),
                   ),
                 ],
