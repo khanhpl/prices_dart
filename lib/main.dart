@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prices_dart/my_main_page.dart';
 import 'package:prices_dart/screens/account/accountpage.dart';
+import 'package:prices_dart/screens/account/order_history.dart';
 import 'package:prices_dart/screens/account/personal_setting.dart';
 import 'package:prices_dart/screens/account/balance_in_wallet.dart';
+import 'package:prices_dart/screens/account/withdrawal_history.dart';
 import 'package:prices_dart/screens/account/withdrawal_request.dart';
 import 'package:prices_dart/screens/account/withdrawal_request_process.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
@@ -33,6 +35,8 @@ void main() {
       '/personalSettingPage' : (context) => PersonalSetting(),
       '/appInfor' : (context) => AppInformation(),
       '/generalSettingPage' : (context) => SettingsPage(),
+      '/orderHistory' : (context) => OrderHistory(),
+      '/withDrawalHistory' : (context) => WithdrawalHistory(),
 
     },
   ),
