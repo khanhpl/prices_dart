@@ -65,7 +65,7 @@ class ShowWithdrawalOnHistoryState extends State<ShowWithdrawalOnHistory> {
               Container(
                 height: size.height * 0.1,
                 child: Image.asset(
-                  'assets/account_page/order_icon.png',
+                  'assets/account_page/withdrawal_icon.png',
                   width: size.width * 0.08,
                   height: size.height * 0.08,
                 ),
@@ -80,7 +80,7 @@ class ShowWithdrawalOnHistoryState extends State<ShowWithdrawalOnHistory> {
                       'Rút tiền từ túi',
                       style: TextStyle(
                         color: Color(0xff333333),
-                        fontSize: size.height * 0.02,
+                        fontSize: size.height * 0.016,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -89,7 +89,7 @@ class ShowWithdrawalOnHistoryState extends State<ShowWithdrawalOnHistory> {
                       withdrawal.time,
                       style: TextStyle(
                         color: Color(0xff666666),
-                        fontSize: size.height * 0.02,
+                        fontSize: size.height * 0.016,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -100,6 +100,8 @@ class ShowWithdrawalOnHistoryState extends State<ShowWithdrawalOnHistory> {
                         color: withdrawal.isStatus == true
                             ? Color(0xff5B9610)
                             : Color(0xffFF3300),
+                        fontSize: size.height * 0.016,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
 
@@ -111,7 +113,7 @@ class ShowWithdrawalOnHistoryState extends State<ShowWithdrawalOnHistory> {
                 withdrawal.total,
                 style: TextStyle(
                   color: Color(0xff333333),
-                  fontSize: size.height * 0.02,
+                  fontSize: size.height * 0.016,
                   fontWeight: FontWeight.w400,
                 ),
               ),

@@ -37,8 +37,6 @@ class WithdrawalHistoryState extends State<WithdrawalHistory> {
     return Material(
       child: Container(
         color: _primaryColor,
-        padding: EdgeInsets.fromLTRB(
-            size.width * 0.0, 0.0, size.width * 0.0, 0.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(

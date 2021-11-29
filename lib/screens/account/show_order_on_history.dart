@@ -80,7 +80,7 @@ class ShowOrderOnHistoryState extends State<ShowOrderOnHistory> {
                       'Đơn hàng từ ' + order.orderSource + ' ' + order.orderID,
                       style: TextStyle(
                         color: Color(0xff333333),
-                        fontSize: size.height * 0.02,
+                        fontSize: size.height * 0.016,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -89,7 +89,7 @@ class ShowOrderOnHistoryState extends State<ShowOrderOnHistory> {
                       'Số tiền hoàn lại: ' + order.refund,
                       style: TextStyle(
                         color: Color(0xffFF3300),
-                        fontSize: size.height * 0.02,
+                        fontSize: size.height * 0.016,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -99,7 +99,7 @@ class ShowOrderOnHistoryState extends State<ShowOrderOnHistory> {
                         text: order.time + ' | ',
                         style: TextStyle(
                           color: Color(0xff666666),
-                          fontSize: size.height * 0.02,
+                          fontSize: size.height * 0.016,
                           fontWeight: FontWeight.w400,
                         ),
                         children: [
@@ -122,7 +122,7 @@ class ShowOrderOnHistoryState extends State<ShowOrderOnHistory> {
                 order.total,
                 style: TextStyle(
                   color: Color(0xff333333),
-                  fontSize: size.height * 0.02,
+                  fontSize: size.height * 0.016,
                   fontWeight: FontWeight.w400,
                 ),
               ),
