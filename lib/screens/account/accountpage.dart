@@ -12,7 +12,6 @@ class AccountPage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     var _rateColor = Color.fromRGBO(91, 150, 16, 1.0);
     var _primaryColor = Constants.primaryColor;
-    var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
 
     List<CustomColor> _colorList = [
       CustomColor(customColor: Color.fromRGBO(244, 250, 250, 1)),
@@ -336,11 +335,11 @@ class AccountPage extends StatelessWidget {
               Option(
                   icon: Icons.comment,
                   optionTitle: 'Góp ý cho Prices',
-                  link: '/'),
+                  link: '/feedbackForPrices'),
               Option(
                   icon: Icons.money,
                   optionTitle: 'Chính sách hoàn tiền',
-                  link: '/'),
+                  link: '/refundPolicy'),
               SizedBox(height: 40.0),
               Container(
                 height: size.height * 0.15,

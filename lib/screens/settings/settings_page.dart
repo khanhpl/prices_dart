@@ -42,7 +42,7 @@ class _SettingsPageState extends State<SettingsPage> {
               child: Container(
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/mainPage');
                   },
                   icon: ImageIcon(
                     AssetImage('assets/account_page/cancel.png'),
@@ -108,7 +108,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
               height: size.height * 0.08,
-              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
+              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 0.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -143,7 +143,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               height: size.height * 0.08,
-              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
+              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 0.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,7 +209,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             Container(
               height: size.height * 0.08,
-              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 2.0),
+              margin: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 0.0),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [

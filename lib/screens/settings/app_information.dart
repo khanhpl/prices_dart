@@ -162,6 +162,7 @@ class AppInformation extends StatelessWidget {
                     ),
                     bottom: BorderSide(
                       color: Color(0xffDADADA),
+                      width: 0.8,
                     ),
                   ),
 
@@ -262,6 +263,7 @@ class AppInformation extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: FlatButton(
+
                   child: Text(
                     'Trang chủ',
                     style: TextStyle(

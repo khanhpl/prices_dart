@@ -57,8 +57,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               ),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 0.0, size.width * 0.03, 0.0),
                 padding: EdgeInsets.fromLTRB(
                     size.width * 0.03, 0, size.width * 0.03, 0),
                 decoration: BoxDecoration(
@@ -105,8 +103,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               ),
               SizedBox(height: size.height * 0.02),
               Container(
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 0, size.width * 0.03, 0),
                 padding: EdgeInsets.fromLTRB(size.width * 0.03,
                     size.height * 0.02, size.width * 0.03, size.height * 0.03),
                 decoration: BoxDecoration(
@@ -265,7 +261,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                     'Yêu cầu rút tiền',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: size.height * 0.024,
+                      fontSize: size.height * 0.023,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -303,8 +299,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               SizedBox(height: size.height * 0.02),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 0, size.width * 0.03, 0),
                 // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   // color: _itemColor,
@@ -392,9 +386,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               SizedBox(height: size.height * 0.02),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 0, size.width * 0.03, 0),
-                // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   // color: _itemColor,
                   gradient: LinearGradient(
@@ -481,9 +472,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               SizedBox(height: size.height * 0.02),
               Container(
                 height: size.height * 0.1,
-                margin: EdgeInsets.fromLTRB(
-                    size.width * 0.03, 0, size.width * 0.03, 0),
-                // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
                   // color: _itemColor,
                   gradient: LinearGradient(
