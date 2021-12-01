@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:prices_dart/my_main_page.dart';
+import 'package:prices_dart/screens/account/add_bank.dart';
+import 'package:prices_dart/screens/account/add_bank_otp.dart';
+import 'package:prices_dart/screens/account/add_bank_status.dart';
 import 'package:prices_dart/screens/account/feedback_for_prices.dart';
-import 'package:prices_dart/screens/account/feedback_successful.dart';
+import 'package:prices_dart/screens/account/feedback_status.dart';
 import 'package:prices_dart/screens/account/order_history.dart';
 import 'package:prices_dart/screens/account/personal_setting.dart';
 import 'package:prices_dart/screens/account/balance_in_wallet.dart';
@@ -42,6 +45,9 @@ void main() {
       '/refundPolicy' : (context) => RefundPolicy(),
       '/feedbackForPrices': (context) => FeedbackForPrices(),
       '/feedbackSuccessful': (context) => FeedbackSuccessful(),
+      '/addBank' : (context) => AddBank(),
+      '/addBankOTP' : (context) => AddBankOTP(),
+      '/addBankStatus' : (context) => AddBankStatus(),
 
     },
   ),

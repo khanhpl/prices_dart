@@ -12,6 +12,146 @@ class WithdrawalRequestPage extends StatefulWidget {
 }
 
 class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
+  bool _isChecked = false;
+
+  _ChooseBank(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          contentPadding: EdgeInsets.all(0),
+          backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+          scrollable: true,
+          content: Container(
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
+                      size.width * 0.05, size.width * 0.03),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Checkbox(
+                              value: _isChecked,
+                              onChanged: (value) {
+                                setState(() {
+                                  _isChecked == false
+                                      ? _isChecked = true
+                                      : _isChecked = false;
+                                });
+                              },
+                              checkColor: Color(0xff5B9610),
+                              activeColor: Colors.white,
+                            ),
+                            Text(
+                              'Viettinbank-365489213',
+                              style: TextStyle(
+                                color: Color(0xff666666),
+                                fontWeight: FontWeight.w400,
+                                fontSize: size.height * 0.022,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: size.height * 0.06,
+                        width: size.width * 0.6,
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(
+                            left: size.width * 0.03, right: size.width * 0.03),
+                        decoration: BoxDecoration(
+                          color: Color(0xff333333),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Color(0xffDADADA)),
+                        ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/addBank');
+                          },
+                          padding: EdgeInsets.all(0),
+                          child: Text(
+                            'Thêm tài khoản ngân hàng',
+                            style: TextStyle(
+                                fontSize: size.height * 0.022,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: size.height * 0.02),
+                Container(
+                  padding: EdgeInsets.fromLTRB(size.width * 0.05, size.height*0.03,
+                      size.width * 0.05, size.width * 0.03),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Text(
+                          'Chưa kết nối với tài khoản ngân hàng',
+                          style: TextStyle(
+                            color: Color(0xff666666),
+                            fontWeight: FontWeight.w400,
+                            fontSize: size.height * 0.022,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: size.height*0.02),
+                      Container(
+                        height: size.height * 0.06,
+                        width: size.width * 0.6,
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(
+                            left: size.width * 0.03, right: size.width * 0.03),
+                        decoration: BoxDecoration(
+                          color: Color(0xff333333),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Color(0xffDADADA)),
+                        ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          padding: EdgeInsets.all(0),
+                          child: Text(
+                            'Thêm tài khoản ngân hàng',
+                            style: TextStyle(
+                                fontSize: size.height * 0.022,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -29,9 +169,8 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
       child: Container(
         width: size.width,
         color: _primaryColor,
-
-        padding: EdgeInsets.fromLTRB(
-            size.width * 0.03, 0, size.width * 0.03, 0),
+        padding:
+            EdgeInsets.fromLTRB(size.width * 0.03, 0, size.width * 0.03, 0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -139,25 +278,31 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Color(0xffDADADA)),
                       ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              decoration: InputDecoration.collapsed(
-                                hintText: 'Sacambank - 321678926',
-                                hintStyle: TextStyle(
-                                  fontSize: size.height * 0.024,
-                                  color: Color(0xff666666),
-                                ),
+                      child: FlatButton(
+                        onPressed: () {
+                          _ChooseBank(context);
+                        },
+                        padding: EdgeInsets.all(0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Sacombank - 312678936',
+                                style: TextStyle(
+                                    fontSize: size.height * 0.024,
+                                    color: Color(0xff666666),
+                                    fontWeight: FontWeight.w400),
                               ),
                             ),
-                          ),
-                          Container(
+                            Container(
                               child: ImageIcon(
-                            AssetImage('assets/account_page/arrow_down.png'),
-                            size: size.height * 0.024,
-                          )),
-                        ],
+                                AssetImage(
+                                    'assets/account_page/arrow_down.png'),
+                                size: size.height * 0.024,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: size.height * 0.03),
@@ -556,6 +701,43 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                 ),
               ),
               SizedBox(height: size.height * 0.1),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ChooseBank extends AlertDialog {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      scrollable: true,
+      title: Text('Login'),
+      content: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  icon: Icon(Icons.account_box),
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  icon: Icon(Icons.email),
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Message',
+                  icon: Icon(Icons.message),
+                ),
+              ),
             ],
           ),
         ),
