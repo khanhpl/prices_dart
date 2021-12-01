@@ -188,15 +188,19 @@ class AppInformation extends StatelessWidget {
                           fontSize: size.height*0.02
                       ),
                     ),
+                    SizedBox(width: size.width*0.01),
                     Container(
-                      height: size.height * 0.045,
-                      width: size.width * 0.15,
+                      width: size.height*0.1,
+                      margin: EdgeInsets.fromLTRB(0, size.height*0.025,
+                          0, size.height*0.025),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         border: Border.all(color: Color(0xffDADADA)),
                       ),
-                      child: TextButton(
+                      child: FlatButton(
+                        padding: EdgeInsets.all(0),
+
                         onPressed: () {},
                         child: Text(
                           'Cập nhật',
@@ -256,11 +260,10 @@ class AppInformation extends StatelessWidget {
 
               SizedBox(height: size.height * 0.06),
               Container(
-                width: size.width * 0.3,
-                height: size.height * 0.06,
+                padding: EdgeInsets.only(left: size.width*0.03, right: size.width*0.03),
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: FlatButton(
 

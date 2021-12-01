@@ -27,6 +27,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
             child: Column(
               children: [
                 Container(
+                  width: size.width*0.9,
                   padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
                       size.width * 0.05, size.width * 0.03),
                   decoration: BoxDecoration(
@@ -67,7 +68,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                       ),
                       Container(
                         height: size.height * 0.06,
-                        width: size.width * 0.6,
+                        width: size.width*0.8,
                         alignment: Alignment.center,
                         padding: EdgeInsets.only(
                             left: size.width * 0.03, right: size.width * 0.03),
@@ -95,6 +96,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                 ),
                 SizedBox(height: size.height * 0.02),
                 Container(
+                  width: size.width*0.9,
                   padding: EdgeInsets.fromLTRB(size.width * 0.05, size.height*0.03,
                       size.width * 0.05, size.width * 0.03),
                   decoration: BoxDecoration(
@@ -106,6 +108,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
+                        margin: EdgeInsets.only(left: size.width*0.03),
                         child: Text(
                           'Chưa kết nối với tài khoản ngân hàng',
                           style: TextStyle(
@@ -118,7 +121,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                       SizedBox(height: size.height*0.02),
                       Container(
                         height: size.height * 0.06,
-                        width: size.width * 0.6,
+                        width: size.width*0.8,
                         alignment: Alignment.center,
                         padding: EdgeInsets.only(
                             left: size.width * 0.03, right: size.width * 0.03),
@@ -395,7 +398,6 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
               ),
               SizedBox(height: size.height * 0.06),
               Container(
-                width: size.width * 0.4,
                 height: size.height * 0.06,
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
@@ -709,39 +711,4 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
   }
 }
 
-class ChooseBank extends AlertDialog {
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      scrollable: true,
-      title: Text('Login'),
-      content: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Form(
-          child: Column(
-            children: <Widget>[
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Name',
-                  icon: Icon(Icons.account_box),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  icon: Icon(Icons.email),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Message',
-                  icon: Icon(Icons.message),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+

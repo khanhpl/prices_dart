@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -159,7 +160,9 @@ class AccountPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/balancePage');
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -323,23 +326,50 @@ class AccountPage extends StatelessWidget {
               ),
               SizedBox(height: 40.0),
               Option(
-                  icon: Icons.account_box_rounded,
-                  optionTitle: 'Cài đặt tài khoản',
-                  link: '/personalSettingPage'),
+                icon: Icons.account_box_rounded,
+                optionTitle: 'Cài đặt tài khoản',
+                link: '/personalSettingPage',
+                botLeft: 0.0,
+                botRight: 0.0,
+                topLeft: 10.0,
+                topRight: 10.0,
+              ),
               Option(
-                  icon: Icons.favorite, optionTitle: 'Đã yêu thích', link: '/'),
+                icon: Icons.favorite,
+                optionTitle: 'Đã yêu thích',
+                link: '/',
+                botLeft: 0.0,
+                botRight: 0.0,
+                topLeft: 0.0,
+                topRight: 0.0,
+              ),
               Option(
-                  icon: Icons.settings,
-                  optionTitle: 'Cài đặt chung',
-                  link: '/generalSettingPage'),
+                icon: Icons.settings,
+                optionTitle: 'Cài đặt chung',
+                link: '/generalSettingPage',
+                botLeft: 0.0,
+                botRight: 0.0,
+                topLeft: 0.0,
+                topRight: 0.0,
+              ),
               Option(
-                  icon: Icons.comment,
-                  optionTitle: 'Góp ý cho Prices',
-                  link: '/feedbackForPrices'),
+                icon: Icons.comment,
+                optionTitle: 'Góp ý cho Prices',
+                link: '/feedbackForPrices',
+                botLeft: 0.0,
+                botRight: 0.0,
+                topLeft: 0.0,
+                topRight: 0.0,
+              ),
               Option(
                   icon: Icons.money,
                   optionTitle: 'Chính sách hoàn tiền',
-                  link: '/refundPolicy'),
+                  link: '/refundPolicy',
+                botLeft: 10.0,
+                botRight: 10.0,
+                topLeft: 0.0,
+                topRight: 0.0,
+              ),
               SizedBox(height: 40.0),
               Container(
                 height: size.height * 0.15,
@@ -426,8 +456,19 @@ class Option extends StatelessWidget {
   IconData icon;
   String optionTitle;
   String link;
+  var topLeft;
+  var topRight;
+  var botLeft;
+  var botRight;
 
-  Option({required this.icon, required this.optionTitle, required this.link});
+  Option(
+      {required this.icon,
+      required this.optionTitle,
+      required this.link,
+      required this.topLeft,
+      required this.topRight,
+      required this.botLeft,
+      required this.botRight});
 
   @override
   Widget build(BuildContext context) {
@@ -441,7 +482,6 @@ class Option extends StatelessWidget {
       CustomColor(customColor: Color.fromRGBO(254, 246, 246, 1)),
     ];
     var size = MediaQuery.of(context).size;
-    var _itemColor = Color.fromRGBO(243, 250, 255, 1.0);
     var _iconColor = Color.fromRGBO(102, 102, 102, 1.0);
     return Container(
       height: size.height * 0.08,
@@ -455,7 +495,11 @@ class Option extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(this.topLeft),
+            topRight: Radius.circular(this.topRight),
+            bottomLeft: Radius.circular(this.botLeft),
+            bottomRight: Radius.circular(this.botRight)),
       ),
       child: FlatButton(
         onPressed: () {
