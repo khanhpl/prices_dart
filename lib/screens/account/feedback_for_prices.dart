@@ -134,13 +134,13 @@ class FeedbackForPrices extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.06),
               Container(
-                width: size.width * 0.3,
-                height: size.height * 0.06,
+                padding: EdgeInsets.only(left: size.width*0.03, right: size.width*0.03),
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: FlatButton(
+                  padding: EdgeInsets.all(0),
                   child: Text(
                     'Góp ý',
                     style: TextStyle(

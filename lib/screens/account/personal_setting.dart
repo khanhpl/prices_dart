@@ -321,14 +321,15 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            height: size.height * 0.045,
-                            width: size.width * 0.18,
+                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
+                                size.width*0.01, size.height*0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
                               border: Border.all(color: Color(0xffDADADA)),
                             ),
-                            child: TextButton(
+                            child: FlatButton(
+                              padding: EdgeInsets.all(0),
                               onPressed: () {},
                               child: Text(
                                 'Kích hoạt',
@@ -367,14 +368,15 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            height: size.height * 0.045,
-                            width: size.width * 0.18,
+                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
+                                size.width*0.01, size.height*0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
                               border: Border.all(color: Color(0xff5B9610)),
                             ),
-                            child: TextButton(
+                            child: FlatButton(
+                              padding: EdgeInsets.all(0),
                               onPressed: () {},
                               child: Text(
                                 'Xác nhận',
@@ -422,14 +424,15 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            height: size.height * 0.045,
-                            width: size.width * 0.22,
+                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
+                                size.width*0.01, size.height*0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
                               border: Border.all(color: Color(0xffDADADA)),
                             ),
-                            child: TextButton(
+                            child: FlatButton(
+                              padding: EdgeInsets.all(0),
                               onPressed: () {},
                               child: Text(
                                 'Đổi mật khẩu',
@@ -497,7 +500,7 @@ class PersonalSettingState extends State<PersonalSetting> {
                 height: size.height * 0.06,
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: FlatButton(
                   child: Text(

@@ -101,8 +101,7 @@ class _BalancePageState extends State<BalancePage> {
                   ),
                   Spacer(),
                   Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.15,
+                    margin: EdgeInsets.only(top: size.height *0.025, bottom: size.height*0.025),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xFFFE3300),
@@ -170,8 +169,7 @@ class _BalancePageState extends State<BalancePage> {
                   ),
                   Spacer(),
                   Container(
-                    height: size.height * 0.04,
-                    width: size.width * 0.15,
+                    margin: EdgeInsets.only(top: size.height *0.025, bottom: size.height*0.025),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,

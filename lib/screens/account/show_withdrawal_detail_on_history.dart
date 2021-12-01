@@ -357,11 +357,10 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
 
               SizedBox(height: size.height * 0.06),
               Container(
-                width: size.width * 0.3,
-                height: size.height * 0.06,
+                padding: EdgeInsets.fromLTRB(size.width*0.03, 0, size.width*0.03, 0),
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: FlatButton(
                   child: Text(
@@ -374,7 +373,6 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                   ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/mainPage');
-
                   },
                 ),
               ),

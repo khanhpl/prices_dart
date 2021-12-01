@@ -256,10 +256,11 @@ class _SettingsPageState extends State<SettingsPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    width: size.width * 0.4,
+
+                    padding: EdgeInsets.only(left: size.width*0.03, right: size.width*0.03),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(25.0),
                     ),
                     child: TextButton(
                       child: Text(
@@ -270,10 +271,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                   ),
                   Container(
-                    width: size.width * 0.3,
+                    padding: EdgeInsets.only(left: size.width*0.03, right: size.width*0.03),
                     decoration: BoxDecoration(
                       color: Color(0xff333333),
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(25.0),
                     ),
                     child: TextButton(
                       child: Text(
