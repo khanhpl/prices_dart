@@ -187,7 +187,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                 child: Container(
                   child: IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context,'/accountPage');
                     },
                     icon: ImageIcon(
                       AssetImage('assets/account_page/cancel.png'),

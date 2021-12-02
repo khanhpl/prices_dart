@@ -1,19 +1,22 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
+import 'package:prices_dart/screens/account/withdrawal_history/withdrawal.dart';
 
-class WithdrawalRequestProcessPage extends StatefulWidget {
+class ShowWithdrawalDetailOnHistory extends StatefulWidget{
+  Withdrawal withdrawal;
+  ShowWithdrawalDetailOnHistory({required this.withdrawal});
   @override
-  State<WithdrawalRequestProcessPage> createState() {
-    return WithdrawalRequestProcessState();
+  State<ShowWithdrawalDetailOnHistory> createState() {
+    return ShowWithdrawalDetailOnHistoryState(withdrawal: this.withdrawal);
   }
+
 }
 
-class WithdrawalRequestProcessState
-    extends State<WithdrawalRequestProcessPage> {
+class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHistory>{
+  Withdrawal withdrawal;
+  ShowWithdrawalDetailOnHistoryState({required this.withdrawal});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -55,27 +58,24 @@ class WithdrawalRequestProcessState
                 ),
               ),
               Text(
-                'Rút tiền đang được xử lý',
+                'Rút tiền từ túi',
                 style: TextStyle(
                   color: Color(0xff333333),
                   fontWeight: FontWeight.w500,
                   fontSize: size.height * 0.032,
                 ),
               ),
+
               SizedBox(height: size.height * 0.02),
-              Container(
-                width: size.width * 0.89,
-                child: Text(
-                  'Prices sẽ xử lý tất cả các giao dịch rút tiền từ thứ 6 hàng tuần',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xff666666),
-                    fontWeight: FontWeight.w400,
-                    fontSize: size.height * 0.022,
-                  ),
+              Text(
+                'Trạng thái: ' + withdrawal.status,
+                style: TextStyle(
+                  color: withdrawal.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
+                  fontWeight: FontWeight.w400,
+                  fontSize: size.height * 0.022,
                 ),
               ),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.03),
               Container(
                 margin: EdgeInsets.fromLTRB(
                     size.width * 0.03, 0.0, size.width * 0.03, 0.0),
@@ -109,7 +109,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              '#23164669131',
+                              withdrawal.widrawalID,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -137,7 +137,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              'Ví prices của bạn',
+                              withdrawal.widrawalSource,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -155,7 +155,7 @@ class WithdrawalRequestProcessState
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                              'Số tiền',
+                            'Số tiền',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -166,7 +166,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                                '360.000đ',
+                              withdrawal.total,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -195,7 +195,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              'Sacombank',
+                              withdrawal.bank,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -224,7 +224,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              '6958489556',
+                              withdrawal.bankID,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -253,7 +253,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              'PHAN THANH LUAN',
+                              withdrawal.bankReceiver,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -282,7 +282,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              'Tien Prices',
+                              withdrawal.content,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -311,7 +311,7 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              '20/06-14:02',
+                              withdrawal.time,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -340,9 +340,9 @@ class WithdrawalRequestProcessState
                         Expanded(
                           child: Container(
                             child: Text(
-                              'Đang xử lý',
+                              withdrawal.status,
                               style: TextStyle(
-                                color: Color(0xff5B9610),
+                                color: withdrawal.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
                                 fontSize: size.height * 0.02,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -357,11 +357,10 @@ class WithdrawalRequestProcessState
 
               SizedBox(height: size.height * 0.06),
               Container(
-                width: size.width * 0.3,
-                height: size.height * 0.06,
+                padding: EdgeInsets.fromLTRB(size.width*0.03, 0, size.width*0.03, 0),
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: FlatButton(
                   child: Text(
@@ -374,7 +373,6 @@ class WithdrawalRequestProcessState
                   ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/mainPage');
-
                   },
                 ),
               ),

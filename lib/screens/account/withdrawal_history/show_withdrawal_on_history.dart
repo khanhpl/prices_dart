@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
-import 'package:prices_dart/screens/account/show_withdrawal_detail_on_history.dart';
-import 'package:prices_dart/screens/account/withdrawal.dart';
+import 'package:prices_dart/screens/account/withdrawal_history/show_withdrawal_detail_on_history.dart';
+import 'package:prices_dart/screens/account/withdrawal_history/withdrawal.dart';
 
 class ShowWithdrawalOnHistory extends StatefulWidget {
   Withdrawal withdrawal;
