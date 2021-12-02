@@ -3,13 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prices_dart/screens/all_product_type.dart';
 import 'package:prices_dart/screens/all_shops.dart';
+import 'package:prices_dart/screens/notifications/notification_page.dart';
 import 'package:prices_dart/services/home_page/product_types/product_type.dart';
 import 'package:prices_dart/services/home_page/product_types/show_product_type_column.dart';
 import 'package:prices_dart/services/home_page/shops/shop.dart';
 import 'package:prices_dart/services/home_page/shops/show_shop_column.dart';
 
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget{
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   List<String> _imageList = ['assets/home_page/tiki_ads.png','assets/home_page/mrspeedy_ads.png'];
 
   List<Shop> _shopList=[
@@ -38,7 +44,7 @@ class HomePage extends StatelessWidget{
 
   List <ProductType> _typeList=[
     ProductType(image:'assets/home_page/product_type1.PNG',name:'Điện thoại - Máy tính bảng',percent: 'xx'),
-    ProductType(image:'assets/home_page/product_type3.PNG',name:'Laptop',percent: 'xx'),
+    ProductType(image:'assets/home_page/product_type3.PNG',name:'Laptop-Thiết bị IT',percent: 'xx'),
   ];
 
   List <ProductType> _typeList1=[
@@ -56,6 +62,13 @@ class HomePage extends StatelessWidget{
     ProductType(image:'assets/home_page/product_type2.PNG' ,name:'Máy ảnh - Máy quay phim',percent: 'xx'),
     ProductType(image: 'assets/home_page/product_type4.PNG',name:'Thời trang - Phụ kiện',percent: 'xx'),
   ];
+
+  List<Navigator> _navigatorList = [
+
+  ];
+
+  bool _isBottomNav = true;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -93,7 +106,12 @@ class HomePage extends StatelessWidget{
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: (){},
+            onPressed: (){
+              setState(() {
+                _isBottomNav = false;
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>NotificationPage(isBottomNav:_isBottomNav ,)));
+              });
+            },
             icon: Icon(Icons.notifications,color: Colors.black26,),
           ),
         ],
@@ -300,5 +318,4 @@ class HomePage extends StatelessWidget{
 
 
   }
-
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
+import 'package:prices_dart/services/account_page/favorite_page/favorite.dart';
 
 class AccountPage extends StatelessWidget {
 
@@ -259,7 +260,12 @@ class AccountPage extends StatelessWidget {
               Option(
                   icon: Icons.account_box_rounded,
                   optionTitle: 'Cài đặt tài khoản'),
-              Option(icon: Icons.favorite, optionTitle: 'Đã yêu thích'),
+              GestureDetector(
+                  onTap:(){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>FavoritePage()));
+                  },
+                  child: Option(icon: Icons.favorite, optionTitle: 'Đã yêu thích')
+              ),
               Option(icon: Icons.settings, optionTitle: 'Cài đặt chung'),
               Option(icon: Icons.comment, optionTitle: 'Góp ý cho Prices'),
               Option(icon: Icons.money, optionTitle: 'Chính sách hoàn tiền'),
