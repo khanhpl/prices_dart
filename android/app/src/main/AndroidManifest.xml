@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.prices_dart">
    <application
-        android:label="prices_dart"
+        android:label="Prices Demo 1.1"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
