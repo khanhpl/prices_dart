@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
-import 'package:prices_dart/screens/account/show_withdrawal_on_history.dart';
-import 'package:prices_dart/screens/account/withdrawal.dart';
-class WithdrawalHistory extends StatefulWidget{
-  @override
-  State<WithdrawalHistory> createState() {
-    return WithdrawalHistoryState();
-  }
+import 'package:prices_dart/screens/account/order_history/order.dart';
+import 'package:prices_dart/screens/account/order_history/show_order_on_history.dart';
 
+class OrderHistory extends StatefulWidget {
+  @override
+  State<OrderHistory> createState() {
+    return OrderHistoryState();
+  }
 }
 
-class WithdrawalHistoryState extends State<WithdrawalHistory> {
-
+class OrderHistoryState extends State<OrderHistory> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -27,11 +26,51 @@ class WithdrawalHistoryState extends State<WithdrawalHistory> {
       CustomColor(customColor: Color.fromRGBO(252, 247, 247, 1)),
       CustomColor(customColor: Color.fromRGBO(254, 246, 246, 1)),
     ];
-    List<Withdrawal> _withdrawalList = [
-      Withdrawal(widrawalID: '#23164669131', widrawalSource: 'Ví Prices của bạn', total: '360.000đ', bank: 'Sacombank', bankID: '6958489556', bankReceiver: 'PHAN THANH LUAN', content: 'tien prices', time: '20/06 - 14:02', status: 'Thành công', isStatus: true),
-      Withdrawal(widrawalID: '#23164669131', widrawalSource: 'Ví Prices của bạn', total: '360.000đ', bank: 'Sacombank', bankID: '6958489556', bankReceiver: 'PHAN THANH LUAN', content: 'tien prices', time: '20/06 - 14:02', status: 'Thành công', isStatus: true),
-      Withdrawal(widrawalID: '#23164669131', widrawalSource: 'Ví Prices của bạn', total: '360.000đ', bank: 'Sacombank', bankID: '6958489556', bankReceiver: 'PHAN THANH LUAN', content: 'tien prices', time: '20/06 - 14:02', status: 'Thành công', isStatus: true),
-      Withdrawal(widrawalID: '#23164669131', widrawalSource: 'Ví Prices của bạn', total: '360.000đ', bank: 'Sacombank', bankID: '6958489556', bankReceiver: 'PHAN THANH LUAN', content: 'tien prices', time: '20/06 - 14:02', status: 'Thất bại', isStatus: false),
+    List<Order> _orderList = [
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
     ];
 
     return Material(
@@ -61,33 +100,28 @@ class WithdrawalHistoryState extends State<WithdrawalHistory> {
                 ),
               ),
               Text(
-                'Lịch sử rút tiền',
+                'Lịch sử đơn hàng',
                 style: TextStyle(
                   color: Color(0xff333333),
                   fontWeight: FontWeight.w500,
                   fontSize: size.height * 0.032,
                 ),
               ),
-
-
-
               ListView.separated(
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
-                itemCount: _withdrawalList.length,
+                itemCount: _orderList.length,
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: size.height*0.02);
+                  return SizedBox(height: size.height * 0.02);
                 },
                 itemBuilder: (BuildContext context, int index) {
-                  return ShowWithdrawalOnHistory(withdrawal: _withdrawalList[index]);
+                  return ShowOrderOnHistory(order: _orderList[index]);
                 },
               ),
-
             ],
           ),
         ),
       ),
     );
   }
-
 }

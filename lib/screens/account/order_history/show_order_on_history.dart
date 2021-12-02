@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prices_dart/screens/account/order.dart';
+import 'package:prices_dart/screens/account/order_history/order.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
-import 'package:prices_dart/screens/account/show_order_detail_on_history.dart';
+import 'package:prices_dart/screens/account/order_history/show_order_detail_on_history.dart';
 
 class ShowOrderOnHistory extends StatefulWidget {
   Order order;

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:prices_dart/screens/account/order_history/order.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
-import 'package:prices_dart/screens/account/withdrawal.dart';
 
-class ShowWithdrawalDetailOnHistory extends StatefulWidget{
-  Withdrawal withdrawal;
-  ShowWithdrawalDetailOnHistory({required this.withdrawal});
+class ShowOrderDetailOnHistory extends StatefulWidget{
+  Order order;
+  ShowOrderDetailOnHistory({required this.order});
   @override
-  State<ShowWithdrawalDetailOnHistory> createState() {
-    return ShowWithdrawalDetailOnHistoryState(withdrawal: this.withdrawal);
+  State<ShowOrderDetailOnHistory> createState() {
+    return ShowOrderDetailOnHistoryState(order: this.order);
   }
 
 }
 
-class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHistory>{
-  Withdrawal withdrawal;
-  ShowWithdrawalDetailOnHistoryState({required this.withdrawal});
+class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
+  Order order;
+  ShowOrderDetailOnHistoryState({required this.order});
 
   @override
   Widget build(BuildContext context) {
@@ -58,24 +58,27 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                 ),
               ),
               Text(
-                'Rút tiền từ túi',
+                'Chi tiết đơn hàng',
                 style: TextStyle(
                   color: Color(0xff333333),
                   fontWeight: FontWeight.w500,
                   fontSize: size.height * 0.032,
                 ),
               ),
-
               SizedBox(height: size.height * 0.02),
-              Text(
-                'Trạng thái: ' + withdrawal.status,
-                style: TextStyle(
-                  color: withdrawal.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
-                  fontWeight: FontWeight.w400,
-                  fontSize: size.height * 0.022,
+              Container(
+                width: size.width * 0.89,
+                child: Text(
+                  'Đơn hàng sẽ được ghi nhận sau 24-48h kể từ lúc bạn đặt hàng thành công.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xff666666),
+                    fontWeight: FontWeight.w400,
+                    fontSize: size.height * 0.022,
+                  ),
                 ),
               ),
-              SizedBox(height: size.height * 0.03),
+              SizedBox(height: size.height * 0.02),
               Container(
                 margin: EdgeInsets.fromLTRB(
                     size.width * 0.03, 0.0, size.width * 0.03, 0.0),
@@ -98,7 +101,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Mã giao dịch',
+                            'Mã đơn hàng',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -109,7 +112,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.widrawalID,
+                              order.orderID,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -126,7 +129,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Nguồn tiền',
+                            'Nguồn đơn hàng',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -137,7 +140,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.widrawalSource,
+                              order.orderSource,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -155,7 +158,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Số tiền',
+                            'Tổng tiền',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -166,7 +169,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.total,
+                              order.total,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -184,7 +187,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Ngân hàng',
+                            'Số tiền hoàn lại ',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -195,7 +198,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.bank,
+                              order.refund,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -213,7 +216,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Số tài khoản',
+                            'Mã giảm giá ',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -224,7 +227,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.bankID,
+                              order.coupon,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -242,7 +245,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Người nhận',
+                            'Tên sản phẩm',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -253,7 +256,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.bankReceiver,
+                              order.itemName,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -271,7 +274,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Nội dung',
+                            'Nghành hàng',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -282,7 +285,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.content,
+                              order.industry,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -311,7 +314,7 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.time,
+                              order.time,
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -340,9 +343,9 @@ class ShowWithdrawalDetailOnHistoryState extends State<ShowWithdrawalDetailOnHis
                         Expanded(
                           child: Container(
                             child: Text(
-                              withdrawal.status,
+                              order.status,
                               style: TextStyle(
-                                color: withdrawal.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
+                                color: order.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
                                 fontSize: size.height * 0.02,
                                 fontWeight: FontWeight.w400,
                               ),

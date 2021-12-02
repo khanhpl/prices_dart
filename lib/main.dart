@@ -1,18 +1,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:prices_dart/my_main_page.dart';
-import 'package:prices_dart/screens/account/add_bank.dart';
-import 'package:prices_dart/screens/account/add_bank_otp.dart';
-import 'package:prices_dart/screens/account/add_bank_status.dart';
-import 'package:prices_dart/screens/account/feedback_for_prices.dart';
-import 'package:prices_dart/screens/account/feedback_status.dart';
-import 'package:prices_dart/screens/account/order_history.dart';
+import 'package:prices_dart/screens/account/accountpage.dart';
+import 'package:prices_dart/screens/account/balance/add_bank.dart';
+import 'package:prices_dart/screens/account/balance/add_bank_otp.dart';
+import 'package:prices_dart/screens/account/balance/add_bank_status.dart';
+import 'package:prices_dart/screens/account/feedback/feedback_for_prices.dart';
+import 'package:prices_dart/screens/account/feedback/feedback_status.dart';
+import 'package:prices_dart/screens/account/order_history/order_history.dart';
 import 'package:prices_dart/screens/account/personal_setting.dart';
-import 'package:prices_dart/screens/account/balance_in_wallet.dart';
+import 'package:prices_dart/screens/account/balance/balance_in_wallet.dart';
 import 'package:prices_dart/screens/account/refund_policy.dart';
-import 'package:prices_dart/screens/account/withdrawal_history.dart';
-import 'package:prices_dart/screens/account/withdrawal_request.dart';
-import 'package:prices_dart/screens/account/withdrawal_request_process.dart';
+import 'package:prices_dart/screens/account/withdrawal_history/withdrawal_history.dart';
+import 'package:prices_dart/screens/account/balance/withdrawal_request.dart';
+import 'package:prices_dart/screens/account/balance/withdrawal_request_process.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
 import 'package:prices_dart/screens/settings/app_information.dart';
 import 'package:prices_dart/screens/settings/settings_page.dart';
@@ -33,6 +34,7 @@ void main() {
       '/forgotPassword' : (context) => ForgotPassword(),
       '/sendRequestPassword' : (context) => SendRequestPassword(),
       '/registerSuccess' : (context) => RegisterSuccessful(),
+      '/accountPage' : (context) => AccountPage(),
       '/balancePage' : (context) => BalancePage(),
       '/withdrawalScreen' : (context) => WithdrawalRequestPage(),
       '/withdrawalProcessScreen' : (context) => WithdrawalRequestProcessPage(),

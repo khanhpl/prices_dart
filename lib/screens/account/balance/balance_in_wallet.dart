@@ -101,9 +101,9 @@ class _BalancePageState extends State<BalancePage> {
                   ),
                   Spacer(),
                   Container(
-                    margin: EdgeInsets.only(top: size.height *0.025, bottom: size.height*0.025),
+                    margin: EdgeInsets.only(top: size.height *0.028, bottom: size.height*0.028),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(20),
                       color: Color(0xFFFE3300),
                     ),
                     child: TextButton(
@@ -169,9 +169,9 @@ class _BalancePageState extends State<BalancePage> {
                   ),
                   Spacer(),
                   Container(
-                    margin: EdgeInsets.only(top: size.height *0.025, bottom: size.height*0.025),
+                    margin: EdgeInsets.only(top: size.height *0.028, bottom: size.height*0.028),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
                       border: Border.all(color: Color(0xffC4C4C4)),
                     ),

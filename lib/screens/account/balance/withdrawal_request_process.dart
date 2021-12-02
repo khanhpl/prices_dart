@@ -1,22 +1,19 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prices_dart/screens/account/order.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
 
-class ShowOrderDetailOnHistory extends StatefulWidget{
-  Order order;
-  ShowOrderDetailOnHistory({required this.order});
+class WithdrawalRequestProcessPage extends StatefulWidget {
   @override
-  State<ShowOrderDetailOnHistory> createState() {
-    return ShowOrderDetailOnHistoryState(order: this.order);
+  State<WithdrawalRequestProcessPage> createState() {
+    return WithdrawalRequestProcessState();
   }
-
 }
 
-class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
-  Order order;
-  ShowOrderDetailOnHistoryState({required this.order});
-
+class WithdrawalRequestProcessState
+    extends State<WithdrawalRequestProcessPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -58,7 +55,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                 ),
               ),
               Text(
-                'Chi tiết đơn hàng',
+                'Rút tiền đang được xử lý',
                 style: TextStyle(
                   color: Color(0xff333333),
                   fontWeight: FontWeight.w500,
@@ -69,7 +66,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
               Container(
                 width: size.width * 0.89,
                 child: Text(
-                  'Đơn hàng sẽ được ghi nhận sau 24-48h kể từ lúc bạn đặt hàng thành công.',
+                  'Prices sẽ xử lý tất cả các giao dịch rút tiền từ thứ 6 hàng tuần',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xff666666),
@@ -101,7 +98,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Mã đơn hàng',
+                            'Mã giao dịch',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -112,7 +109,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.orderID,
+                              '#23164669131',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -129,7 +126,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Nguồn đơn hàng',
+                            'Nguồn tiền',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -140,7 +137,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.orderSource,
+                              'Ví prices của bạn',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -158,7 +155,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Tổng tiền',
+                              'Số tiền',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -169,7 +166,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.total,
+                                '360.000đ',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -187,7 +184,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Số tiền hoàn lại ',
+                            'Ngân hàng',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -198,7 +195,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.refund,
+                              'Sacombank',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -216,7 +213,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Mã giảm giá ',
+                            'Số tài khoản',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -227,7 +224,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.coupon,
+                              '6958489556',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -245,7 +242,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Tên sản phẩm',
+                            'Người nhận',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -256,7 +253,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.itemName,
+                              'PHAN THANH LUAN',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -274,7 +271,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Container(
                           width: size.width * 0.38,
                           child: Text(
-                            'Nghành hàng',
+                            'Nội dung',
                             style: TextStyle(
                               color: Color(0xff333333),
                               fontSize: size.height * 0.02,
@@ -285,7 +282,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.industry,
+                              'Tien Prices',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -314,7 +311,7 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.time,
+                              '20/06-14:02',
                               style: TextStyle(
                                 color: Color(0xff333333),
                                 fontSize: size.height * 0.02,
@@ -343,9 +340,9 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
                         Expanded(
                           child: Container(
                             child: Text(
-                              order.status,
+                              'Đang xử lý',
                               style: TextStyle(
-                                color: order.isStatus == true ? Color(0xff5B9610) : Color(0xffFF3300),
+                                color: Color(0xff5B9610),
                                 fontSize: size.height * 0.02,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -360,7 +357,8 @@ class ShowOrderDetailOnHistoryState extends State<ShowOrderDetailOnHistory>{
 
               SizedBox(height: size.height * 0.06),
               Container(
-                padding: EdgeInsets.fromLTRB(size.width*0.03, 0, size.width*0.03, 0),
+                // height: size.height * 0.06,
+                padding: EdgeInsets.only(left: size.width*0.04, right: size.width*0.04),
                 decoration: BoxDecoration(
                   color: Color(0xff333333),
                   borderRadius: BorderRadius.circular(25),
