@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
+import 'package:prices_dart/services/account_page/favorite_page/favorite.dart';
 
 class AccountPage extends StatelessWidget {
   @override
@@ -326,6 +327,7 @@ class AccountPage extends StatelessWidget {
               ),
               SizedBox(height: 40.0),
               Option(
+
                 icon: Icons.account_box_rounded,
                 optionTitle: 'Cài đặt tài khoản',
                 link: '/personalSettingPage',

@@ -2,6 +2,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:prices_dart/screens/account/accountpage.dart';
 import 'package:prices_dart/screens/home/homepage.dart';
+import 'package:prices_dart/screens/notifications/notification_page.dart';
 import 'package:prices_dart/screens/settings/settings_page.dart';
 
 
@@ -12,17 +13,17 @@ class MyMainPage extends StatefulWidget {
 
 class _MyMainPageState extends State<MyMainPage> {
   int _selectedIndex = 0;
+  bool _isBottomNav = true;
 
   Widget pageCaller(index) {
     switch (index) {
       case 0:
         return HomePage();
       case 1:
-        return Text('Thong bao');
+        return NotificationPage(isBottomNav: _isBottomNav,);
       case 2:
         return AccountPage();
       case 3:
-
         return SettingsPage();
 
       default:

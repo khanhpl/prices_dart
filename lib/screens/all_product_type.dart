@@ -48,7 +48,7 @@ class AllProductType extends StatelessWidget{
 
               Container(
                 margin: EdgeInsets.all(5.0),
-                height: double.infinity,
+                // height: double.infinity,
                 width: double.infinity,
                 child: ListView.separated(
                   shrinkWrap:true,
