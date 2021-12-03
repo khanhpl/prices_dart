@@ -9,11 +9,14 @@ import 'package:prices_dart/constants.dart' as Constant;
 
 class FavoritePage extends StatelessWidget{
 
+
   List<Shop> favoriteShopList=[
-    Shop(image:'assets/home_page/shopee_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/tiki_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/sendo_brand.png',percent:'xx'),
+    Shop(name: 'Shopee',image:'assets/home_page/shopee_brand.png',percent:'xx'),
+    Shop(name: 'Tiki',image:'assets/home_page/tiki_brand.png',percent:'xx'),
+    Shop(name:'Sendo',image:'assets/home_page/sendo_brand.png',percent:'xx'),
   ];
+
+
 
   List<ProductType> favoriteProductTypeList=[
     ProductType(image:'assets/home_page/product_type1.PNG',name:'Điện thoại - Máy tính bảng',percent: 'xx'),

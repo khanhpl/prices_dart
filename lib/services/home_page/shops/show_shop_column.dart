@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prices_dart/services/home_page/shops/show_shop.dart';
+import 'package:prices_dart/services/home_page/shops/show_shop_detail.dart';
 import 'shop.dart';
 
 class ShowShopInColumn extends StatelessWidget{
@@ -10,8 +11,18 @@ class ShowShopInColumn extends StatelessWidget{
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        ShowShop(item: item),
-        ShowShop(item: item1),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context)=>ShowShopDetail(item: item,)));
+          },
+            child: ShowShop(item: item)
+        ),
+        GestureDetector(
+            onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>ShowShopDetail(item: item1,)));
+            },
+            child: ShowShop(item: item1)
+        ),
       ],
     );
   }

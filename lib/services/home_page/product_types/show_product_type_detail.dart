@@ -10,17 +10,17 @@ class ShowProductTypeDetail extends StatelessWidget{
   ShowProductTypeDetail({required this.name});
 
   List<Shop> _shopForDetailList = [
-    Shop(image:'assets/notification_page/lottevn.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/lazada.png',percent:'xx%'),
+    Shop(name:'',image:'assets/notification_page/lottevn.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/lazada.png',percent:'xx%'),
 
-    Shop(image:'assets/notification_page/lottevn.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/lazada.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/lottevn.png',percent:'xx%'),
+    Shop(name:'',image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/lazada.png',percent:'xx%'),
 
-    Shop(image:'assets/notification_page/lottevn.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
-    Shop(image:'assets/notification_page/lazada.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/lottevn.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/bachhoaxanh.png',percent:'xx%'),
+    Shop(name: '',image:'assets/notification_page/lazada.png',percent:'xx%'),
   ];
 
   List <ProductType> _typeList=[
