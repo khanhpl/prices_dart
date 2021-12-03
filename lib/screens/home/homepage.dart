@@ -19,27 +19,27 @@ class _HomePageState extends State<HomePage> {
   List<String> _imageList = ['assets/home_page/tiki_ads.png','assets/home_page/mrspeedy_ads.png'];
 
   List<Shop> _shopList=[
-    Shop(image:'assets/home_page/shopee_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/tiki_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/sendo_brand.png',percent:'xx'),
+    Shop(name: 'Shopee',image:'assets/home_page/shopee_brand.png',percent:'xx'),
+    Shop(name: 'Tiki',image:'assets/home_page/tiki_brand.png',percent:'xx'),
+    Shop(name:'Sendo',image:'assets/home_page/sendo_brand.png',percent:'xx'),
   ];
 
   List<Shop> _shopList1=[
-    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(name: 'Aeonshop',image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(name: 'Fado',image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(name: 'HNOSS',image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
   ];
 
   List<Shop> _allShopList=[
-    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
-    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
-    Shop(image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/fado_brand.png',percent:'xx'),
-    Shop(image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(name: 'Aeonshop',image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(name: 'Fado',image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(name: 'HNOSS',image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(name: 'Aeonshop',image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(name: 'Fado',image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(name: 'HNOSS',image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
+    Shop(name: 'Aeonshop',image:'assets/home_page/aeonshop_brand.png',percent:'xx'),
+    Shop(name: 'Fado',image:'assets/home_page/fado_brand.png',percent:'xx'),
+    Shop(name: 'HNOSS',image:'assets/home_page/HNOSS_brand.jpg',percent:'xx'),
   ];
 
   List <ProductType> _typeList=[
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text('Chào Jack Dawson',style: TextStyle(fontSize: 10.0,color: Colors.black)),
+                        Text('Chào Luân Phan',style: TextStyle(fontSize: 10.0,color: Colors.black)),
                         RichText(
                           text: TextSpan(
                             children: <TextSpan>[
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 margin: EdgeInsets.all(5.0),
-                height: size.height * 0.25,
+                height: size.height * 0.26,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: _shopList.length,
@@ -294,7 +294,7 @@ class _HomePageState extends State<HomePage> {
 
               Container(
                 margin: EdgeInsets.all(5.0),
-                height: size.height * 0.25,
+                height: size.height * 0.28,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: _typeList.length,

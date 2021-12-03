@@ -23,6 +23,7 @@ import 'package:prices_dart/screens/welcome/register_screen.dart';
 import 'package:prices_dart/screens/welcome/send_request_password.dart';
 
 import 'package:prices_dart/screens/welcome/welcome_screen.dart';
+import 'package:prices_dart/services/account_page/favorite_page/favorite.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -50,6 +51,7 @@ void main() {
       '/addBank' : (context) => AddBank(),
       '/addBankOTP' : (context) => AddBankOTP(),
       '/addBankStatus' : (context) => AddBankStatus(),
+      '/favoritePage' :(context) => FavoritePage(),
 
     },
   ),

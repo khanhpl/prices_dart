@@ -339,7 +339,7 @@ class AccountPage extends StatelessWidget {
               Option(
                 icon: Icons.favorite,
                 optionTitle: 'Đã yêu thích',
-                link: '/',
+                link: '/favoritePage',
                 botLeft: 0.0,
                 botRight: 0.0,
                 topLeft: 0.0,
