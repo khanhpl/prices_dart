@@ -158,14 +158,14 @@ class ShowNotification2 extends StatelessWidget{
             ),
             Spacer(),
             Container(
-              height: size.height *0.05,
+              height: size.height *0.06,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(color: Colors.grey),
               ),
               child: TextButton(
-                child: Text('Cập nhật',style: TextStyle(color: Colors.black26),),
+                child: Text('Cập nhật',style: TextStyle(color: Colors.black54),),
                 onPressed: (){},
               ),
             ),

@@ -45,7 +45,7 @@ class _BalancePageState extends State<BalancePage> {
               child: Container(
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                      Navigator.pushNamed(context, '/accountPage');
                   },
                   icon: ImageIcon(
                     AssetImage('assets/account_page/cancel.png'),

@@ -31,7 +31,7 @@ class AllShops extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Cửa hàng bạn quan tâm',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
+              Container(margin:EdgeInsets.fromLTRB(10.0, 20.0,10.0, 0.0),child: Text('Cửa hàng bạn quan tâm',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:size.height*0.03),)),
               Container(
                 margin: EdgeInsets.all(5.0),
                 height: size.height * 0.15,
@@ -46,7 +46,7 @@ class AllShops extends StatelessWidget{
                   },
                 ),
               ),
-              Text('Cửa hàng khác',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
+              Container(margin:EdgeInsets.fromLTRB(10.0, 20.0,10.0, 0.0),child: Text('Cửa hàng khác',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: size.height*0.03),)),
 
               Container(
                 margin: EdgeInsets.all(5.0),

@@ -54,7 +54,7 @@ class ShowDiscountCode extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('Tiết kiệm',style: TextStyle(color:Colors.black,fontSize:10.0),),
-                    Text(item.discountPercentage,style: TextStyle(color:Colors.red,),),
+                    Text(item.discountPercentage,style: TextStyle(color:Color.fromRGBO(255, 51, 0,1.0),),),
 
                   ],
                 ),
@@ -168,7 +168,7 @@ class ShowDiscountCode1 extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text('Tiết kiệm',style: TextStyle(color:Colors.black,fontSize:10.0),),
-                  Text(item.discountPercentage,style: TextStyle(color:Colors.red,),),
+                  Text(item.discountPercentage,style: TextStyle(color:Color.fromRGBO(255, 51, 0,1.0),),),
 
                 ],
               ),

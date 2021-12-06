@@ -5,22 +5,29 @@ import 'package:prices_dart/screens/home/homepage.dart';
 import 'package:prices_dart/screens/notifications/notification_page.dart';
 import 'package:prices_dart/screens/settings/settings_page.dart';
 
-
 class MyMainPage extends StatefulWidget {
+  int selectedIndex = 0;
+
+  bool isBottomNav = true;
+
+  MyMainPage({required this.selectedIndex, required this.isBottomNav});
+
   @override
-  State<MyMainPage> createState() => _MyMainPageState();
+  State<MyMainPage> createState() => _MyMainPageState(
+      selectedIndex: this.selectedIndex, isBottomNav: this.isBottomNav);
 }
 
 class _MyMainPageState extends State<MyMainPage> {
-  int _selectedIndex = 0;
-  bool _isBottomNav = true;
+  int selectedIndex;
+  bool isBottomNav;
+  _MyMainPageState({required this.selectedIndex, required this.isBottomNav});
 
   Widget pageCaller(index) {
-    switch (index) {
+    switch (selectedIndex) {
       case 0:
         return HomePage();
       case 1:
-        return NotificationPage(isBottomNav: _isBottomNav,);
+        return NotificationPage(isBottomNav: isBottomNav);
       case 2:
         return AccountPage();
       case 3:
@@ -33,7 +40,7 @@ class _MyMainPageState extends State<MyMainPage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -41,15 +48,15 @@ class _MyMainPageState extends State<MyMainPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: pageCaller(_selectedIndex),
-      bottomNavigationBar: ConvexAppBar(
+      body: pageCaller(selectedIndex),
+      bottomNavigationBar: isBottomNav == true ? ConvexAppBar(
         height: size.height * 0.1,
         style: TabStyle.react,
         backgroundColor: Colors.white,
         color: Colors.grey[700],
         activeColor: Colors.black,
         onTap: _onItemTapped,
-        initialActiveIndex: 0,
+        initialActiveIndex: selectedIndex,
         top: 0.0,
         items: [
           TabItem(
@@ -69,7 +76,38 @@ class _MyMainPageState extends State<MyMainPage> {
             title: 'Cài đặt',
           ),
         ],
+      ) : Container(
+        height: 0,
       ),
+
+      // bottomNavigationBar: ConvexAppBar(
+      //   height: size.height * 0.1,
+      //   style: TabStyle.react,
+      //   backgroundColor: Colors.white,
+      //   color: Colors.grey[700],
+      //   activeColor: Colors.black,
+      //   onTap: _onItemTapped,
+      //   initialActiveIndex: 0,
+      //   top: 0.0,
+      //   items: [
+      //     TabItem(
+      //       icon: Icons.home,
+      //       title: 'Trang chủ',
+      //     ),
+      //     TabItem(
+      //       icon: Icons.notifications,
+      //       title: 'Thông báo',
+      //     ),
+      //     TabItem(
+      //       icon: Icons.account_box_sharp,
+      //       title: 'Tài khoản',
+      //     ),
+      //     TabItem(
+      //       icon: Icons.settings,
+      //       title: 'Cài đặt',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

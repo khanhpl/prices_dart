@@ -1,9 +1,13 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
+import '../../globals.dart' as globals;
 
 class PersonalSetting extends StatefulWidget {
   @override
@@ -15,11 +19,15 @@ class PersonalSetting extends StatefulWidget {
 class PersonalSettingState extends State<PersonalSetting> {
   bool _isGenderMale = false;
   bool _isGenderFemale = false;
+  late File imageFile;
+
+  bool _picIsChose = false;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var _primaryColor = Constants.primaryColor;
+
     List<CustomColor> _colorList = [
       CustomColor(customColor: Color.fromRGBO(244, 250, 250, 1)),
       CustomColor(customColor: Color.fromRGBO(245, 249, 249, 1)),
@@ -46,7 +54,8 @@ class PersonalSettingState extends State<PersonalSetting> {
                 child: Container(
                   child: IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
+                      Navigator.pushNamed(context, '/accountPage');
                     },
                     icon: ImageIcon(
                       AssetImage('assets/account_page/cancel.png'),
@@ -66,20 +75,49 @@ class PersonalSettingState extends State<PersonalSetting> {
               ),
               SizedBox(height: size.height * 0.03),
               Container(
-                width: size.height * 0.12,
-                height: size.height * 0.12,
-                alignment: Alignment.bottomCenter,
-                padding: EdgeInsets.only(bottom: size.height * 0.01),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage('assets/account_page/jack.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                child: Icon(
-                  Icons.add_a_photo,
-                  color: _primaryColor,
+                child: FlatButton(
+                  onPressed: () {
+                    _getFromGallery();
+                    // setState(() {
+                    //   globals.isAvatarChecked = true;
+                    //   globals.avatarFile = imageFile;
+                    // });
+                  },
+                  child: globals.isAvatarChecked == false
+                      ? Container(
+                          width: size.height * 0.12,
+                          height: size.height * 0.12,
+                          alignment: Alignment.bottomCenter,
+                          padding: EdgeInsets.only(bottom: size.height * 0.01),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage('assets/account_page/jack.jpg'),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.add_a_photo,
+                            color: _primaryColor,
+                          ),
+                        )
+                      : Container(
+                          width: size.height * 0.12,
+                          height: size.height * 0.12,
+                          alignment: Alignment.bottomCenter,
+                          padding: EdgeInsets.only(bottom: size.height * 0.01),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: FileImage(globals.avatarFile),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.add_a_photo,
+                            color: _primaryColor,
+                          ),
+                        ),
                 ),
               ),
               SizedBox(height: size.height * 0.03),
@@ -266,6 +304,10 @@ class PersonalSettingState extends State<PersonalSetting> {
                         border: Border.all(color: Color(0xffDADADA)),
                       ),
                       child: TextField(
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
                         decoration: InputDecoration.collapsed(
                           hintText: '0907 343 340',
                           hintStyle: TextStyle(
@@ -311,6 +353,10 @@ class PersonalSettingState extends State<PersonalSetting> {
                         children: [
                           Expanded(
                             child: TextField(
+                              keyboardType: TextInputType.phone,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
                               decoration: InputDecoration.collapsed(
                                 hintText: 'Nhập số điện thoại',
                                 hintStyle: TextStyle(
@@ -321,8 +367,11 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
-                                size.width*0.01, size.height*0.005),
+                            margin: EdgeInsets.fromLTRB(
+                                size.width * 0.01,
+                                size.height * 0.005,
+                                size.width * 0.01,
+                                size.height * 0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
@@ -368,8 +417,11 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
-                                size.width*0.01, size.height*0.005),
+                            margin: EdgeInsets.fromLTRB(
+                                size.width * 0.01,
+                                size.height * 0.005,
+                                size.width * 0.01,
+                                size.height * 0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
@@ -424,8 +476,11 @@ class PersonalSettingState extends State<PersonalSetting> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(size.width*0.01, size.height*0.005,
-                                size.width*0.01, size.height*0.005),
+                            margin: EdgeInsets.fromLTRB(
+                                size.width * 0.01,
+                                size.height * 0.005,
+                                size.width * 0.01,
+                                size.height * 0.005),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
@@ -520,5 +575,19 @@ class PersonalSettingState extends State<PersonalSetting> {
         ),
       ),
     );
+  }
+
+  _getFromGallery() async {
+    PickedFile? pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+        _picIsChose = true;
+        globals.isAvatarChecked = true;
+        globals.avatarFile = imageFile;
+      });
+    }
   }
 }

@@ -40,6 +40,7 @@ class ShowShopDetail extends StatelessWidget{
     var _primaryColor = Constant.primaryColor;
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.5,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
           color: Colors.black
@@ -66,6 +67,7 @@ class ShowShopDetail extends StatelessWidget{
           scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+
             children:  <Widget>[
               Container(
                 padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0,10.0),
@@ -84,7 +86,7 @@ class ShowShopDetail extends StatelessWidget{
                       style:TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
-                        fontSize: 15.0,
+                        fontSize: size.height *0.023,
                       ) ,
                     ),
                     Row(
@@ -94,7 +96,7 @@ class ShowShopDetail extends StatelessWidget{
                           style:TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
-                            fontSize: 15.0,
+                            fontSize: size.height *0.023,
                           ) ,
                         ),
                         GestureDetector(
@@ -103,7 +105,7 @@ class ShowShopDetail extends StatelessWidget{
                             },
                             child: Text(
                               '...xem thêm',
-                              style: TextStyle(color: Colors.deepOrange),
+                              style: TextStyle(color: Color.fromRGBO(255, 51, 0, 1.0)),
                             )
                         ),
                       ],
@@ -115,20 +117,20 @@ class ShowShopDetail extends StatelessWidget{
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          height:size.height * 0.04,
+                          height:size.height * 0.05,
                           width:size.width * 0.4,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20.0),
                             border: Border.all(color: Colors.grey),
                           ),
-                          child: Center(child: Text('Hoàn tiền đến '+item.percent,style: TextStyle(color:Colors.deepOrange,fontSize:10.0),)),
+                          child: Center(child: Text('Hoàn tiền đến '+item.percent+'%',style: TextStyle(color:Color.fromRGBO(255, 51, 0, 1.0),fontSize:10.0),)),
                         ),
                         Container(
-                          height:size.height * 0.04,
+                          height:size.height * 0.05,
                           width:size.width * 0.4,
                           decoration: BoxDecoration(
-                            color: Colors.deepOrange,
+                            color: Color.fromRGBO(255, 51, 0, 1.0),
                             borderRadius: BorderRadius.circular(20.0),
                             border: Border.all(color: Colors.grey),
                           ),
@@ -141,12 +143,15 @@ class ShowShopDetail extends StatelessWidget{
                 ),
               ),
 
-              Text(
-                'Doanh mục hoàn tiền tại '+item.name,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+              Container(
+                margin: EdgeInsets.fromLTRB(10.0,20.0, 10.0,0.0),
+                child: Text(
+                  'Doanh mục hoàn tiền tại '+item.name,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: size.height *0.03,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
 
@@ -154,6 +159,7 @@ class ShowShopDetail extends StatelessWidget{
                 margin: EdgeInsets.all(5.0),
                 // height: size.height * 0.25,
                 child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   itemCount: _listForRefund.length,
@@ -176,7 +182,7 @@ class ShowShopDetail extends StatelessWidget{
                       'Xem thêm cửa hàng khác',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
+                        fontSize: size.height *0.03,
                         fontWeight: FontWeight.bold,
 
                       ),
@@ -190,7 +196,7 @@ class ShowShopDetail extends StatelessWidget{
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
@@ -321,6 +327,7 @@ class _RefundForBrandState extends State<RefundForBrand> {
         ),
 
         Container(
+
           child: isSelected?Container(
             padding: EdgeInsets.all(5.0),
             decoration: BoxDecoration(
@@ -330,12 +337,13 @@ class _RefundForBrandState extends State<RefundForBrand> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Mã giảm giá',style: TextStyle(color: Colors.black,),),
+                Container(margin:EdgeInsets.fromLTRB(5.0,5.0,5.0,0.0),child: Text('Mã giảm giá',style: TextStyle(color: Colors.black,),)),
                 Container(
                   margin: EdgeInsets.all(5.0),
                   width:size.width * 0.85,
                   child: ListView.separated(
                     shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     itemCount: discountCodeList.length,
                     separatorBuilder: (BuildContext context, int index) {

@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,14 +6,26 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
-import 'package:prices_dart/services/account_page/favorite_page/favorite.dart';
+import '../../globals.dart' as globals;
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
+  @override
+  State<AccountPage> createState() {
+    return AccountPageState();
+  }
+}
+
+class AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var _rateColor = Color.fromRGBO(91, 150, 16, 1.0);
     var _primaryColor = Constants.primaryColor;
+    bool isAvatarChecked = false;
+
+    setState(() {
+      isAvatarChecked = globals.isAvatarChecked;
+    });
 
     List<CustomColor> _colorList = [
       CustomColor(customColor: Color.fromRGBO(244, 250, 250, 1)),
@@ -45,7 +57,8 @@ class AccountPage extends StatelessWidget {
                     Container(
                         child: IconButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        // Navigator.pop(context);
+                        Navigator.pushNamed(context, '/mainPage');
                       },
                       icon: ImageIcon(
                         AssetImage('assets/account_page/cancel.png'),
@@ -59,17 +72,45 @@ class AccountPage extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     Spacer(),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/account_page/jack.jpg'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      width: size.height * 0.07,
-                      height: size.height * 0.07,
-                    ),
+
+                    globals.isAvatarChecked == false
+                        ? Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('assets/account_page/jack.jpg'),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            width: size.height * 0.07,
+                            height: size.height * 0.07,
+                          )
+                        : Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: FileImage(globals.avatarFile),
+                                // image: AssetImage('assets/account_page/jack.jpg'),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            width: size.height * 0.07,
+                            height: size.height * 0.07,
+                          ),
+
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //     shape: BoxShape.circle,
+                    //     image: DecorationImage(
+                    //       image: AssetImage('assets/account_page/jack.jpg'),
+                    //       fit: BoxFit.fill,
+                    //     ),
+                    //   ),
+                    //   width: size.height * 0.07,
+                    //   height: size.height * 0.07,
+                    // ),
+
                     SizedBox(width: size.width * 0.03),
                   ],
                 ),
@@ -327,7 +368,6 @@ class AccountPage extends StatelessWidget {
               ),
               SizedBox(height: 40.0),
               Option(
-
                 icon: Icons.account_box_rounded,
                 optionTitle: 'Cài đặt tài khoản',
                 link: '/personalSettingPage',
@@ -364,9 +404,9 @@ class AccountPage extends StatelessWidget {
                 topRight: 0.0,
               ),
               Option(
-                  icon: Icons.money,
-                  optionTitle: 'Chính sách hoàn tiền',
-                  link: '/refundPolicy',
+                icon: Icons.money,
+                optionTitle: 'Chính sách hoàn tiền',
+                link: '/refundPolicy',
                 botLeft: 10.0,
                 botRight: 10.0,
                 topLeft: 0.0,
