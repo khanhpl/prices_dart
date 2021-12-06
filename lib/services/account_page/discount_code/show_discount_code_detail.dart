@@ -36,6 +36,7 @@ class ShowDiscountCodeDetail extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.5,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
           color: Colors.black,
@@ -80,7 +81,7 @@ class ShowDiscountCodeDetail extends StatelessWidget{
                     style:TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 16.0,
+                      fontSize: size.height *0.025,
 
                     ) ,
                   ),
@@ -101,7 +102,7 @@ class ShowDiscountCodeDetail extends StatelessWidget{
                     text: TextSpan(
                       children: [
                         TextSpan(text:'Nghành hàng: ',style: TextStyle(color: Colors.black,fontSize: 10.0)),
-                        TextSpan(text:'Xe công nghệ - Giao đồ ăn - Giao hàng nhanh',style: TextStyle(color: Colors.deepOrange,fontSize: 10.0)),
+                        TextSpan(text:'Xe công nghệ - Giao đồ ăn - Giao hàng nhanh',style: TextStyle(color: Colors.green,fontSize: 10.0)),
                       ],
                     ),
                   ),
@@ -114,9 +115,9 @@ class ShowDiscountCodeDetail extends StatelessWidget{
                     color: _primaryColor,
                     thickness: 1.0,
                   ),
-                  Text('Điều kiện:',style: TextStyle(color: Colors.black,fontSize: 10.0)),
-                  Text('* Áp dụng cho khách hàng sử dụng Ahamove lần đầu',style: TextStyle(color: Colors.black,fontSize: 10.0)),
-                  Text('* Giảm tối đa 30k',style: TextStyle(color: Colors.black,fontSize: 10.0)),
+                  Container(margin: EdgeInsets.all(5.0),child: Text('Điều kiện:',style: TextStyle(color: Colors.black,fontSize: 10.0))),
+                  Container(margin: EdgeInsets.all(5.0),child: Text('* Áp dụng cho khách hàng sử dụng Ahamove lần đầu',style: TextStyle(color: Colors.black,fontSize: 10.0))),
+                  Container(margin: EdgeInsets.all(5.0),child: Text('* Giảm tối đa 30k',style: TextStyle(color: Colors.black,fontSize: 10.0))),
 
                   Divider(
                     color: _primaryColor,
@@ -154,9 +155,9 @@ class ShowDiscountCodeDetail extends StatelessWidget{
 
                         Container(
                           height:size.height * 0.04,
-                          width:size.width * 0.3,
+                          width:size.width * 0.35,
                           decoration: BoxDecoration(
-                            color: Colors.deepOrange,
+                            color: Color.fromRGBO(255, 51, 0, 1.0),
                             borderRadius: BorderRadius.circular(20.0),
                             border: Border.all(color: Colors.grey),
                           ),
@@ -172,13 +173,16 @@ class ShowDiscountCodeDetail extends StatelessWidget{
               ),
             ),
 
-            Text(
-              'Mã giảm giá khác',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+            Container(
+              margin: EdgeInsets.fromLTRB(10.0, 20.0, 5.0,0.0),
+              child: Text(
+                'Mã giảm giá khác',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: size.height * 0.03,
+                  fontWeight: FontWeight.w500,
 
+                ),
               ),
             ),
 
@@ -207,8 +211,8 @@ class ShowDiscountCodeDetail extends StatelessWidget{
                     'Cửa hàng uy tín',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: size.height *0.03,
+                      fontWeight: FontWeight.w500,
 
                     ),
                   ),
@@ -221,7 +225,7 @@ class ShowDiscountCodeDetail extends StatelessWidget{
                       'Xem tất cả',
                       style: TextStyle(
                         fontSize: 8.0,
-                        color: Colors.black26,
+                        color: Colors.black54,
                       ),
                     ),
                   ),

@@ -41,6 +41,7 @@ class ShowProductTypeDetail extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.5,
         title: Text('Ngành hàng',style: TextStyle(color: Colors.black),),
         centerTitle: true,
         iconTheme: IconThemeData(
@@ -55,7 +56,7 @@ class ShowProductTypeDetail extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(name,style: TextStyle(color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold),),
+              Container(margin: EdgeInsets.fromLTRB(10.0,20.0,10.0,0.0),child: Text(name,style: TextStyle(color: Colors.black,fontSize:size.height*0.03,fontWeight: FontWeight.w500),)),
 
               Container(
                 margin: EdgeInsets.all(5.0),
@@ -85,8 +86,8 @@ class ShowProductTypeDetail extends StatelessWidget{
                       'Xem thêm ngành hàng khác',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: size.height *0.03,
+                        fontWeight: FontWeight.w500,
 
                       ),
                     ),
@@ -98,7 +99,7 @@ class ShowProductTypeDetail extends StatelessWidget{
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
@@ -121,7 +122,7 @@ class ShowProductTypeDetail extends StatelessWidget{
 
               Container(
                 margin: EdgeInsets.all(5.0),
-                height: size.height * 0.25,
+                height: size.height * 0.28,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: _typeList.length,
@@ -190,9 +191,10 @@ class ShopForDetail extends StatelessWidget{
                 border: Border.all(color: Colors.grey),
               ),
               child: Center(
-                child: Text('Mua ngay',style: TextStyle(color: Colors.black26,fontSize: 10.0),),
+                child: Text('Mua ngay',style: TextStyle(color: Colors.black54,fontSize: 10.0),),
               ),
             ),
+            SizedBox(width: 10.0,),
             Icon(Icons.favorite_border,color: Colors.black26,),
           ]
       ),

@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/welcome_page/logo.png',
+                    'assets/welcome_page/Logo.png',
                   ),
                   fit: BoxFit.fitHeight,
                 ),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         onPressed: (){
-                          Navigator.pushNamed(context, '/mainPage');
+                          Navigator.pushNamed(context, '/homePage');
                         },
                       ),
                     ),
@@ -200,7 +200,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                     onPressed: () {
-                                      Navigator.pushNamed(context, '/mainPage');
+                                      Navigator.pushNamed(context, '/homePage');
                                     },
                                   ),
                                 ),

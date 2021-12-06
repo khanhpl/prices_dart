@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:prices_dart/constants.dart' as Constants;
 import 'package:prices_dart/colors.dart';
 
@@ -223,6 +224,10 @@ class AddBank extends StatelessWidget {
                         border: Border.all(color: Color(0xffDADADA)),
                       ),
                       child: TextField(
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
                         decoration: InputDecoration.collapsed(
                           hintText: '365478912',
                           hintStyle: TextStyle(

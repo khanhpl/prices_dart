@@ -1,6 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:prices_dart/colors.dart';
 import 'package:prices_dart/constants.dart' as Constants;
 
@@ -27,7 +27,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
             child: Column(
               children: [
                 Container(
-                  width: size.width*0.9,
+                  width: size.width * 0.9,
                   padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
                       size.width * 0.05, size.width * 0.03),
                   decoration: BoxDecoration(
@@ -68,7 +68,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                       ),
                       Container(
                         height: size.height * 0.06,
-                        width: size.width*0.8,
+                        width: size.width * 0.8,
                         alignment: Alignment.center,
                         padding: EdgeInsets.only(
                             left: size.width * 0.03, right: size.width * 0.03),
@@ -96,9 +96,9 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                 ),
                 SizedBox(height: size.height * 0.02),
                 Container(
-                  width: size.width*0.9,
-                  padding: EdgeInsets.fromLTRB(size.width * 0.05, size.height*0.03,
-                      size.width * 0.05, size.width * 0.03),
+                  width: size.width * 0.9,
+                  padding: EdgeInsets.fromLTRB(size.width * 0.05,
+                      size.height * 0.03, size.width * 0.05, size.width * 0.03),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
@@ -108,7 +108,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: size.width*0.03),
+                        margin: EdgeInsets.only(left: size.width * 0.03),
                         child: Text(
                           'Chưa kết nối với tài khoản ngân hàng',
                           style: TextStyle(
@@ -118,10 +118,10 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height*0.02),
+                      SizedBox(height: size.height * 0.02),
                       Container(
                         height: size.height * 0.06,
-                        width: size.width*0.8,
+                        width: size.width * 0.8,
                         alignment: Alignment.center,
                         padding: EdgeInsets.only(
                             left: size.width * 0.03, right: size.width * 0.03),
@@ -187,7 +187,8 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                 child: Container(
                   child: IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context,'/accountPage');
+                      Navigator.pushNamed(context, '/accountPage');
+                      // Navigator.pop(context);
                     },
                     icon: ImageIcon(
                       AssetImage('assets/account_page/cancel.png'),
@@ -341,6 +342,10 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                         children: [
                           Expanded(
                             child: TextField(
+                              keyboardType: TextInputType.phone,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
                               decoration: InputDecoration.collapsed(
                                 hintText: '360.000',
                                 hintStyle: TextStyle(
@@ -710,5 +715,3 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
     );
   }
 }
-
-

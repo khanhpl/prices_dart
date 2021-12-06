@@ -53,7 +53,7 @@ class FavoritePage extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(10.0,20.0,10.0,0.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,8 +62,8 @@ class FavoritePage extends StatelessWidget{
                       'Cửa hàng',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: size.height *0.03,
+                        fontWeight: FontWeight.w500,
 
                       ),
                     ),
@@ -75,7 +75,7 @@ class FavoritePage extends StatelessWidget{
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
@@ -112,7 +112,7 @@ class FavoritePage extends StatelessWidget{
               ),
 
               Container(
-                margin: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(10.0,20.0,10.0,0.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,8 +121,8 @@ class FavoritePage extends StatelessWidget{
                       'Ngành hàng',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: size.height *0.03,
+                        fontWeight: FontWeight.w500,
 
                       ),
                     ),
@@ -134,7 +134,7 @@ class FavoritePage extends StatelessWidget{
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
@@ -170,13 +170,16 @@ class FavoritePage extends StatelessWidget{
                 ),
               ),
 
-              Text(
-                'Mã giảm giá',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+              Container(
+                margin: EdgeInsets.fromLTRB(10.0,20.0,10.0,0.0),
+                child: Text(
+                  'Mã giảm giá',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: size.height *0.03,
+                    fontWeight: FontWeight.w500,
 
+                  ),
                 ),
               ),
 

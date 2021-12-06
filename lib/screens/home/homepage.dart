@@ -8,6 +8,7 @@ import 'package:prices_dart/services/home_page/product_types/product_type.dart';
 import 'package:prices_dart/services/home_page/product_types/show_product_type_column.dart';
 import 'package:prices_dart/services/home_page/shops/shop.dart';
 import 'package:prices_dart/services/home_page/shops/show_shop_column.dart';
+import '../../globals.dart' as globals;
 
 
 class HomePage extends StatefulWidget{
@@ -152,10 +153,28 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     Spacer(),
-                    CircleAvatar(
-                      backgroundImage:AssetImage('assets/account_page/jack.jpg'),
-                      radius: 25.0,
-                    )
+                    globals.isAvatarChecked == false ? Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage('assets/account_page/jack.jpg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      width: size.height * 0.07,
+                      height: size.height * 0.07,
+                    ): Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: FileImage(globals.avatarFile),
+                          // image: AssetImage('assets/account_page/jack.jpg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      width: size.height * 0.07,
+                      height: size.height * 0.07,
+                    ),
                   ],
                 ),
               ),
@@ -196,8 +215,8 @@ class _HomePageState extends State<HomePage> {
                       'Cửa hàng uy tín',
                       style: TextStyle(
                       color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: size.height *0.03,
+                        fontWeight: FontWeight.w500,
 
                     ),
                     ),
@@ -210,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
@@ -256,8 +275,8 @@ class _HomePageState extends State<HomePage> {
                       'Ngành hàng nổi bật',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: size.height *0.03,
+                        fontWeight: FontWeight.w500,
 
                       ),
                     ),
@@ -270,7 +289,7 @@ class _HomePageState extends State<HomePage> {
                         'Xem tất cả',
                         style: TextStyle(
                           fontSize: 8.0,
-                          color: Colors.black26,
+                          color: Colors.black54,
                         ),
                       ),
                     ),
