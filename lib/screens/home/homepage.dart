@@ -87,21 +87,24 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         title: Container(
-          width: size.width * 0.9,
-          padding: EdgeInsets.all(5.0),
+          height: size.height *0.06,
+          width: size.width *0.8,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.white,
+            borderRadius:  BorderRadius.circular(20),
             border: Border.all(color: Colors.grey),
-
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text('Tìm mã giảm giá HOT, cơ hội hoàn tiền mới',style: TextStyle(color: Colors.black26,fontSize:9.0),),
-              Spacer(),
-            Icon(Icons.search,color: Colors.black26,),
-            ],
+          child: TextField(
+            style: TextStyle(
+              fontSize: 12.0,
+            ),
+            decoration: InputDecoration(
+              hintStyle: TextStyle(fontSize: 8.0),
+              hintText: 'Tìm mã giảm giá HOT, cơ hội hoàn tiền mới',
+              suffixIcon: Icon(Icons.search,size:20.0,),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.fromLTRB(5.0,15.0,0,15.0),
+            ),
           ),
         ),
         centerTitle: true,

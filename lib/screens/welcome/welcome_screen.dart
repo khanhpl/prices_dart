@@ -12,6 +12,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     var _primaryColor = Constants.primaryColor;
@@ -43,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Colors.black87,
-                  fontSize: _pageHeight*0.03,
+                  fontSize: _pageHeight*0.026,
                 ),
               ),
             ),

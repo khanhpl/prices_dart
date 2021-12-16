@@ -1,9 +1,7 @@
 
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:prices_dart/my_main_page.dart';
-import 'package:prices_dart/screens/account/accountpage.dart';
 import 'package:prices_dart/screens/account/balance/add_bank.dart';
 import 'package:prices_dart/screens/account/balance/add_bank_otp.dart';
 import 'package:prices_dart/screens/account/balance/add_bank_status.dart';
@@ -16,9 +14,7 @@ import 'package:prices_dart/screens/account/refund_policy.dart';
 import 'package:prices_dart/screens/account/withdrawal_history/withdrawal_history.dart';
 import 'package:prices_dart/screens/account/balance/withdrawal_request.dart';
 import 'package:prices_dart/screens/account/balance/withdrawal_request_process.dart';
-import 'package:prices_dart/screens/home/homepage.dart';
 import 'package:prices_dart/screens/settings/app_information.dart';
-import 'package:prices_dart/screens/settings/settings_page.dart';
 import 'package:prices_dart/screens/welcome/forgot_password.dart';
 import 'package:prices_dart/screens/welcome/login_screen.dart';
 import 'package:prices_dart/screens/welcome/register_screen.dart';

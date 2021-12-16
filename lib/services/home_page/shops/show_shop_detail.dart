@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:prices_dart/constants.dart' as Constant;
 import 'package:prices_dart/screens/account/refund_policy.dart';
 import 'package:prices_dart/services/account_page/discount_code/discount_code.dart';
@@ -299,7 +300,12 @@ class _RefundForBrandState extends State<RefundForBrand> {
                     child: Text('Mua ngay',style: TextStyle(color: Colors.black,fontSize: 10.0),),
                   ),
                 ),
-                Icon(Icons.favorite_border,color: Colors.black26,),
+                LikeButton(likeBuilder:(bool isLiked){
+                  return Icon(
+                    isLiked?Icons.favorite:Icons.favorite_border,
+                    color: isLiked?Colors.red:Colors.black26,
+                  );
+                },),
                 GestureDetector(
                   onTap: (){
                     setState(() {

@@ -71,6 +71,50 @@ class OrderHistoryState extends State<OrderHistory> {
           time: '20/06 - 14:02',
           status: 'Đang xử lý',
           isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
+      Order(
+          orderID: '#23164669131',
+          orderSource: 'Shopee',
+          total: '360.000.000đ',
+          refund: '35,125đ',
+          coupon: 'thang7sale',
+          itemName: 'Điện Thoại Realme C3i (2GB/32GB)',
+          industry: 'Điện Thoại & Phụ Kiện',
+          time: '20/06 - 14:02',
+          status: 'Đang xử lý',
+          isStatus: true),
     ];
 
     return Material(
@@ -78,6 +122,7 @@ class OrderHistoryState extends State<OrderHistory> {
         color: _primaryColor,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
+          // physics: ClampingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,6 +153,7 @@ class OrderHistoryState extends State<OrderHistory> {
                 ),
               ),
               ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemCount: _orderList.length,

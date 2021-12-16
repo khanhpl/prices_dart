@@ -78,10 +78,6 @@ class PersonalSettingState extends State<PersonalSetting> {
                 child: FlatButton(
                   onPressed: () {
                     _getFromGallery();
-                    // setState(() {
-                    //   globals.isAvatarChecked = true;
-                    //   globals.avatarFile = imageFile;
-                    // });
                   },
                   child: globals.isAvatarChecked == false
                       ? Container(

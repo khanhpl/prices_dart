@@ -14,6 +14,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   late TabController _controller;
 
+  bool _showPass = false;
+  bool _showRegisPass = false;
+  bool _showRegainRegisPass = false;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -51,10 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: _pageHeight * 0.05,
                       width: _pageWidth * 0.23,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                            color: Colors.grey.shade400,
-                          ),
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all(
+                          color: Colors.grey.shade400,
+                        ),
                       ),
                       child: FlatButton(
                         child: Text(
@@ -65,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: _pageHeight * 0.02,
                           ),
                         ),
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.pushNamed(context, '/homePage');
                         },
                       ),
@@ -144,44 +148,52 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 SizedBox(height: _pageHeight * 0.025),
                                 Container(
-                                    width: _pageWidth * 0.7,
-                                    height: _pageHeight * 0.06,
-                                    alignment: Alignment.centerLeft,
-                                    padding: EdgeInsets.only(left: 20),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: _pageWidth * 0.5,
-                                          child: TextField(
-                                            decoration:
-                                                InputDecoration.collapsed(
-                                              hintText: 'Mật Khẩu',
-                                              hintStyle: TextStyle(
-                                                fontSize: _pageHeight * 0.02,
-                                                color: Colors.black26,
-                                              ),
+                                  width: _pageWidth * 0.7,
+                                  height: _pageHeight * 0.06,
+                                  alignment: Alignment.centerLeft,
+                                  padding: EdgeInsets.only(left: 20),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: _pageWidth * 0.5,
+                                        child: TextField(
+                                          obscureText: !_showPass,
+                                          decoration: InputDecoration.collapsed(
+                                            hintText: 'Mật Khẩu',
+                                            hintStyle: TextStyle(
+                                              fontSize: _pageHeight * 0.02,
+                                              color: Colors.black26,
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                          child: Container(
-                                            child: ImageIcon(
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          child: IconButton(
+                                            icon: !_showPass ? ImageIcon(
                                               AssetImage(
                                                   'assets/welcome_page/eye.png'),
                                               color: Colors.black26,
-                                              size: _pageHeight * 0.025,
+                                              size: _pageHeight * 0.05,
+                                            ) : ImageIcon(
+                                              AssetImage(
+                                                  'assets/welcome_page/eye.png'),
+                                              color: Colors.blue,
+                                              size: _pageHeight * 0.05,
                                             ),
+                                            onPressed: () {
+                                              showPass();
+                                            },
                                           ),
                                         ),
-                                      ],
-
-                                    ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-
                                 SizedBox(height: _pageHeight * 0.025),
                                 Container(
                                   width: _pageWidth * 0.7,
@@ -224,11 +236,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
-
                                     onPressed: () {
-                                        Navigator.pushNamed(context, '/forgotPassword');
+                                      Navigator.pushNamed(
+                                          context, '/forgotPassword');
                                     },
-
                                   ),
                                 ),
                                 SizedBox(height: _pageHeight * 0.07),
@@ -237,7 +248,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   height: _pageHeight * 0.03,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Expanded(
                                         child: Container(
@@ -278,11 +290,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   child: FlatButton(
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         ImageIcon(
-                                          AssetImage('assets/welcome_page/fbicon.png'),
+                                          AssetImage(
+                                              'assets/welcome_page/fbicon.png'),
                                           size: _pageHeight * 0.04,
                                           color: Colors.white,
                                         ),
@@ -343,6 +356,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         Container(
                                           width: _pageWidth * 0.5,
                                           child: TextField(
+                                            obscureText: !_showRegisPass,
                                             decoration:
                                                 InputDecoration.collapsed(
                                               hintText: 'Mật Khẩu',
@@ -355,11 +369,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                         Expanded(
                                           child: Container(
-                                            child: ImageIcon(
-                                              AssetImage(
-                                                  'assets/welcome_page/eye.png'),
-                                              color: Colors.black26,
-                                              size: _pageHeight * 0.025,
+                                            child: IconButton(
+                                              icon: !_showRegisPass ? ImageIcon(
+                                                AssetImage(
+                                                    'assets/welcome_page/eye.png'),
+                                                color: Colors.black26,
+                                                size: _pageHeight * 0.05,
+                                              ) : ImageIcon(
+                                                AssetImage(
+                                                    'assets/welcome_page/eye.png'),
+                                                color: Colors.blue,
+                                                size: _pageHeight * 0.05,
+                                              ),
+                                              onPressed: () {
+                                                showRegisPass();
+                                              },
                                             ),
                                           ),
                                         ),
@@ -380,6 +404,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         Container(
                                           width: _pageWidth * 0.5,
                                           child: TextField(
+                                            obscureText: !_showRegainRegisPass,
                                             decoration:
                                                 InputDecoration.collapsed(
                                               hintText: 'Nhập lại mật khẩu',
@@ -392,11 +417,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                         Expanded(
                                           child: Container(
-                                            child: ImageIcon(
-                                              AssetImage(
-                                                  'assets/welcome_page/eye.png'),
-                                              color: Colors.black26,
-                                              size: _pageHeight * 0.025,
+                                            child: IconButton(
+                                              icon: !_showRegainRegisPass ? ImageIcon(
+                                                AssetImage(
+                                                    'assets/welcome_page/eye.png'),
+                                                color: Colors.black26,
+                                                size: _pageHeight * 0.05,
+                                              ) : ImageIcon(
+                                                AssetImage(
+                                                    'assets/welcome_page/eye.png'),
+                                                color: Colors.blue,
+                                                size: _pageHeight * 0.05,
+                                              ),
+                                              onPressed: () {
+                                                showRegainRegisPass();
+                                              },
                                             ),
                                           ),
                                         ),
@@ -419,11 +454,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
-
                                     onPressed: () {
-                                      Navigator.pushNamed(context, '/registerSuccess');
+                                      Navigator.pushNamed(
+                                          context, '/registerSuccess');
                                     },
-
                                   ),
                                 ),
                                 SizedBox(height: _pageHeight * 0.07),
@@ -432,7 +466,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   height: _pageHeight * 0.03,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Expanded(
                                         child: Container(
@@ -473,11 +508,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   child: FlatButton(
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         ImageIcon(
-                                          AssetImage('assets/welcome_page/fbicon.png'),
+                                          AssetImage(
+                                              'assets/welcome_page/fbicon.png'),
                                           size: _pageHeight * 0.04,
                                           color: Colors.white,
                                         ),
@@ -508,5 +544,35 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void showPass() async {
+    setState(() {
+      if (_showPass == true) {
+        _showPass = false;
+      } else {
+        _showPass = true;
+      }
+    });
+  }
+
+  void showRegisPass() async {
+    setState(() {
+      if (_showRegisPass == true) {
+        _showRegisPass = false;
+      } else {
+        _showRegisPass = true;
+      }
+    });
+  }
+
+  void showRegainRegisPass() async {
+    setState(() {
+      if (_showRegainRegisPass == true) {
+        _showRegainRegisPass = false;
+      } else {
+        _showRegainRegisPass = true;
+      }
+    });
   }
 }
