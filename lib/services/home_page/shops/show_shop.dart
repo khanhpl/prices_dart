@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:prices_dart/services/home_page/shops/shop.dart';
 
 
@@ -23,7 +24,7 @@ class ShowShop extends StatelessWidget{
           Row(
             children: <Widget>[
               Container(
-                height: size.height *0.05,
+                height: size.height *0.06,
                 width:size.width *0.2,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -33,7 +34,12 @@ class ShowShop extends StatelessWidget{
                 ),
               ),
               Spacer(),
-              Icon(Icons.favorite_border,color:Colors.black26),
+              LikeButton(likeBuilder:(bool isLiked){
+                return Icon(
+                  isLiked?Icons.favorite:Icons.favorite_border,
+                  color: isLiked?Colors.red:Colors.black26,
+                );
+              },),
             ],
           ),
           SizedBox(height:5.0),
@@ -72,7 +78,7 @@ class ShowShop1 extends StatelessWidget{
           Row(
             children: <Widget>[
               Container(
-                height: size.height *0.05,
+                height: size.height *0.06,
                 width:size.width *0.2,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -82,7 +88,12 @@ class ShowShop1 extends StatelessWidget{
                 ),
               ),
               Spacer(),
-              Icon(Icons.favorite_border,color:Colors.black26),
+              LikeButton(likeBuilder:(bool isLiked){
+                return Icon(
+                  isLiked?Icons.favorite:Icons.favorite_border,
+                  color: isLiked?Colors.red:Colors.black26,
+                );
+              },),
             ],
           ),
           SizedBox(height:5.0),

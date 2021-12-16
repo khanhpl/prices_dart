@@ -12,144 +12,221 @@ class WithdrawalRequestPage extends StatefulWidget {
 }
 
 class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
-  bool _isChecked = false;
+  bool _isCheckedViettin = false;
+  bool _isCheckedVietcom = false;
 
   _ChooseBank(BuildContext context) {
     var size = MediaQuery.of(context).size;
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          contentPadding: EdgeInsets.all(0),
-          backgroundColor: Color.fromRGBO(0, 0, 0, 0),
-          scrollable: true,
-          content: Container(
-            child: Column(
-              children: [
-                Container(
-                  width: size.width * 0.9,
-                  padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
-                      size.width * 0.05, size.width * 0.03),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+        return StatefulBuilder(
+            builder: (context, setState){
+              return AlertDialog(
+                contentPadding: EdgeInsets.all(0),
+                backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+                scrollable: true,
+                content: Container(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        width: size.width * 0.9,
+                        padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
+                            size.width * 0.05, size.width * 0.03),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Checkbox(
-                              value: _isChecked,
-                              onChanged: (value) {
-                                setState(() {
-                                  _isChecked == false
-                                      ? _isChecked = true
-                                      : _isChecked = false;
-                                });
-                              },
-                              checkColor: Color(0xff5B9610),
-                              activeColor: Colors.white,
+                            Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Checkbox(
+                                    value: _isCheckedViettin,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _isCheckedViettin = true;
+                                        _isCheckedVietcom = false;
+                                      });
+
+                                    },
+
+                                    checkColor: Color(0xff5B9610),
+                                    activeColor: Colors.white,
+                                  ),
+                                  Text(
+                                    'Viettinbank-365489213',
+                                    style: TextStyle(
+                                      color: Color(0xff666666),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: size.height * 0.022,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            Text(
-                              'Viettinbank-365489213',
-                              style: TextStyle(
-                                color: Color(0xff666666),
-                                fontWeight: FontWeight.w400,
-                                fontSize: size.height * 0.022,
+
+                            Container(
+                              height: size.height * 0.06,
+                              width: size.width * 0.8,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.only(
+                                  left: size.width * 0.03, right: size.width * 0.03),
+                              decoration: BoxDecoration(
+                                color: Color(0xff333333),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: Color(0xffDADADA)),
+                              ),
+                              child: FlatButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/addBank');
+                                },
+                                padding: EdgeInsets.all(0),
+                                child: Text(
+                                  'Thêm tài khoản ngân hàng',
+                                  style: TextStyle(
+                                      fontSize: size.height * 0.022,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
+                      SizedBox(height: size.height * 0.02),
                       Container(
-                        height: size.height * 0.06,
-                        width: size.width * 0.8,
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(
-                            left: size.width * 0.03, right: size.width * 0.03),
+                        width: size.width * 0.9,
+                        padding: EdgeInsets.fromLTRB(size.width * 0.05, 0,
+                            size.width * 0.05, size.width * 0.03),
                         decoration: BoxDecoration(
-                          color: Color(0xff333333),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Color(0xffDADADA)),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FlatButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/addBank');
-                          },
-                          padding: EdgeInsets.all(0),
-                          child: Text(
-                            'Thêm tài khoản ngân hàng',
-                            style: TextStyle(
-                                fontSize: size.height * 0.022,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                Container(
-                  width: size.width * 0.9,
-                  padding: EdgeInsets.fromLTRB(size.width * 0.05,
-                      size.height * 0.03, size.width * 0.05, size.width * 0.03),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: size.width * 0.03),
-                        child: Text(
-                          'Chưa kết nối với tài khoản ngân hàng',
-                          style: TextStyle(
-                            color: Color(0xff666666),
-                            fontWeight: FontWeight.w400,
-                            fontSize: size.height * 0.022,
-                          ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Checkbox(
+                                    value: _isCheckedVietcom,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _isCheckedViettin = false;
+                                        _isCheckedVietcom = true;
+
+                                      });
+                                    },
+                                    checkColor: Color(0xff5B9610),
+                                    activeColor: Colors.white,
+                                  ),
+                                  Text(
+                                    'Vietcombank-12345678',
+                                    style: TextStyle(
+                                      color: Color(0xff666666),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: size.height * 0.022,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            Container(
+                              height: size.height * 0.06,
+                              width: size.width * 0.8,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.only(
+                                  left: size.width * 0.03, right: size.width * 0.03),
+                              decoration: BoxDecoration(
+                                color: Color(0xff333333),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: Color(0xffDADADA)),
+                              ),
+                              child: FlatButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/addBank');
+                                },
+                                padding: EdgeInsets.all(0),
+                                child: Text(
+                                  'Thêm tài khoản ngân hàng',
+                                  style: TextStyle(
+                                      fontSize: size.height * 0.022,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: size.height * 0.02),
                       Container(
-                        height: size.height * 0.06,
-                        width: size.width * 0.8,
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(
-                            left: size.width * 0.03, right: size.width * 0.03),
+                        width: size.width * 0.9,
+                        padding: EdgeInsets.fromLTRB(size.width * 0.05,
+                            size.height * 0.03, size.width * 0.05, size.width * 0.03),
                         decoration: BoxDecoration(
-                          color: Color(0xff333333),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Color(0xffDADADA)),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FlatButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          padding: EdgeInsets.all(0),
-                          child: Text(
-                            'Thêm tài khoản ngân hàng',
-                            style: TextStyle(
-                                fontSize: size.height * 0.022,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400),
-                          ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: size.width * 0.03),
+                              child: Text(
+                                'Chưa kết nối với tài khoản ngân hàng',
+                                style: TextStyle(
+                                  color: Color(0xff666666),
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: size.height * 0.022,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: size.height * 0.02),
+                            Container(
+                              height: size.height * 0.06,
+                              width: size.width * 0.8,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.only(
+                                  left: size.width * 0.03, right: size.width * 0.03),
+                              decoration: BoxDecoration(
+                                color: Color(0xff333333),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: Color(0xffDADADA)),
+                              ),
+                              child: FlatButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                padding: EdgeInsets.all(0),
+                                child: Text(
+                                  'Thêm tài khoản ngân hàng',
+                                  style: TextStyle(
+                                      fontSize: size.height * 0.022,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ),
+              );
+            }
         );
       },
     );
@@ -293,7 +370,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                               child: Text(
                                 'Sacombank - 312678936',
                                 style: TextStyle(
-                                    fontSize: size.height * 0.024,
+                                    fontSize: size.height * 0.022,
                                     color: Color(0xff666666),
                                     fontWeight: FontWeight.w400),
                               ),
@@ -302,7 +379,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                               child: ImageIcon(
                                 AssetImage(
                                     'assets/account_page/arrow_down.png'),
-                                size: size.height * 0.024,
+                                size: size.height * 0.022,
                               ),
                             ),
                           ],
@@ -349,7 +426,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                               decoration: InputDecoration.collapsed(
                                 hintText: '360.000',
                                 hintStyle: TextStyle(
-                                  fontSize: size.height * 0.024,
+                                  fontSize: size.height * 0.022,
                                   color: Color(0xff666666),
                                 ),
                               ),
@@ -361,7 +438,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                               style: TextStyle(
                                 color: Color(0xff666666),
                                 fontWeight: FontWeight.w400,
-                                fontSize: size.height * 0.024,
+                                fontSize: size.height * 0.022,
                               ),
                             ),
                           ),
@@ -392,7 +469,7 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
                         decoration: InputDecoration.collapsed(
                           hintText: 'tien prices',
                           hintStyle: TextStyle(
-                            fontSize: size.height * 0.024,
+                            fontSize: size.height * 0.022,
                             color: Color(0xff666666),
                           ),
                         ),
@@ -714,4 +791,5 @@ class WithdrawalRequestScreen extends State<WithdrawalRequestPage> {
       ),
     );
   }
+
 }

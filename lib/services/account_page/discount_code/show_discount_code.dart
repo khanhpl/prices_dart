@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:prices_dart/constants.dart' as Constant;
 import 'package:prices_dart/services/account_page/discount_code/show_discount_code_detail.dart';
 
@@ -109,7 +110,12 @@ class ShowDiscountCode extends StatelessWidget{
                     child: Text('Chi Tiết',style: TextStyle(color: Colors.black,fontSize: 10.0),),
                   ),
                 ),
-                Icon(Icons.favorite,color: Colors.red,),
+                LikeButton(likeBuilder:(bool isLiked){
+                  return Icon(
+                    isLiked?Icons.favorite:Icons.favorite_border,
+                    color: isLiked?Colors.red:Colors.black26,
+                  );
+                },),
               ],
             ),
           ],
@@ -223,7 +229,12 @@ class ShowDiscountCode1 extends StatelessWidget{
                   child: Text('Chi Tiết',style: TextStyle(color: Colors.black,fontSize: 10.0),),
                 ),
               ),
-              Icon(Icons.favorite,color: Colors.red,),
+              LikeButton(likeBuilder:(bool isLiked){
+                return Icon(
+                  isLiked?Icons.favorite:Icons.favorite_border,
+                  color: isLiked?Colors.red:Colors.black26,
+                );
+              },),
             ],
           ),
         ],

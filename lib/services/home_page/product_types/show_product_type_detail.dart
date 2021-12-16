@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:prices_dart/constants.dart' as Constant;
 import 'package:prices_dart/services/home_page/product_types/product_type.dart';
 import 'package:prices_dart/services/home_page/product_types/show_product_type_column.dart';
@@ -195,7 +196,12 @@ class ShopForDetail extends StatelessWidget{
               ),
             ),
             SizedBox(width: 10.0,),
-            Icon(Icons.favorite_border,color: Colors.black26,),
+            LikeButton(likeBuilder:(bool isLiked){
+              return Icon(
+                isLiked?Icons.favorite:Icons.favorite_border,
+                color: isLiked?Colors.red:Colors.black26,
+              );
+            },),
           ]
       ),
     );

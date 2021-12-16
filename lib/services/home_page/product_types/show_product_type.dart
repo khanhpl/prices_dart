@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 import 'product_type.dart';
 
@@ -42,7 +43,12 @@ class ShowProductType extends StatelessWidget{
             ],
           ),
           Spacer(),
-          Icon(Icons.favorite_border,color: Colors.black26,),
+          LikeButton(likeBuilder:(bool isLiked){
+            return Icon(
+              isLiked?Icons.favorite:Icons.favorite_border,
+              color: isLiked?Colors.red:Colors.black26,
+            );
+          },),
          ]
     ),
     );
@@ -90,7 +96,12 @@ class ShowProductType1 extends StatelessWidget{
               ],
             ),
             Spacer(),
-            Icon(Icons.favorite_border,color: Colors.black26,),
+            LikeButton(likeBuilder:(bool isLiked){
+              return Icon(
+                isLiked?Icons.favorite:Icons.favorite_border,
+                color: isLiked?Colors.red:Colors.black26,
+              );
+            },),
           ]
       ),
     );
