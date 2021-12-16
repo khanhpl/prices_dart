@@ -565,7 +565,7 @@ class PersonalSettingState extends State<PersonalSetting> {
                   onPressed: () {},
                 ),
               ),
-              SizedBox(height: size.height * 0.06),
+              SizedBox(height: size.height * 0.4),
             ],
           ),
         ),
