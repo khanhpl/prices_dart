@@ -137,7 +137,7 @@ class ShowDiscountCode1 extends StatelessWidget{
     return Container(
       margin: EdgeInsets.all(5.0),
       padding:EdgeInsets.all(5.0),
-      height: size.height * 0.2,
+      height: size.height * 0.20 + 2.8,
       width:size.width * 0.8,
       decoration: BoxDecoration(
         color: Colors.white,
